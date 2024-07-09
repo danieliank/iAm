@@ -12,6 +12,10 @@
 		6AC0274C2C3CD2CB0052CBFD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0274B2C3CD2CB0052CBFD /* Item.swift */; };
 		6AC0274E2C3CD2CC0052CBFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC0274D2C3CD2CC0052CBFD /* Assets.xcassets */; };
 		6AC027512C3CD2CC0052CBFD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC027502C3CD2CC0052CBFD /* Preview Assets.xcassets */; };
+		9604EE252C3D74320088D47C /* AudioRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604EE242C3D74320088D47C /* AudioRecordView.swift */; };
+		9604EE272C3DA7680088D47C /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604EE262C3DA7680088D47C /* Toolbar.swift */; };
+		9604EE2A2C3DA99F0088D47C /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604EE292C3DA99F0088D47C /* Navbar.swift */; };
+		9604EE2C2C3DB6EA0088D47C /* AudioRecordToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604EE2B2C3DB6EA0088D47C /* AudioRecordToolbarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		6AC0274B2C3CD2CB0052CBFD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6AC0274D2C3CD2CC0052CBFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AC027502C3CD2CC0052CBFD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9604EE242C3D74320088D47C /* AudioRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordView.swift; sourceTree = "<group>"; };
+		9604EE262C3DA7680088D47C /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
+		9604EE292C3DA99F0088D47C /* Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
+		9604EE2B2C3DB6EA0088D47C /* AudioRecordToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordToolbarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,9 @@
 		6AC027462C3CD2CB0052CBFD /* iAm */ = {
 			isa = PBXGroup;
 			children = (
+				9604EE212C3D70FB0088D47C /* Model */,
+				9604EE202C3D70F20088D47C /* View Model */,
+				9604EE1F2C3D70E90088D47C /* View */,
 				6AC027472C3CD2CB0052CBFD /* iAmApp.swift */,
 				6AC027492C3CD2CB0052CBFD /* ContentView.swift */,
 				6AC0274B2C3CD2CB0052CBFD /* Item.swift */,
@@ -68,6 +79,39 @@
 				6AC027502C3CD2CC0052CBFD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9604EE1F2C3D70E90088D47C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9604EE282C3DA77F0088D47C /* ToolbarView */,
+				9604EE242C3D74320088D47C /* AudioRecordView.swift */,
+				9604EE262C3DA7680088D47C /* Toolbar.swift */,
+				9604EE292C3DA99F0088D47C /* Navbar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9604EE202C3D70F20088D47C /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		9604EE212C3D70FB0088D47C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9604EE282C3DA77F0088D47C /* ToolbarView */ = {
+			isa = PBXGroup;
+			children = (
+				9604EE2B2C3DB6EA0088D47C /* AudioRecordToolbarView.swift */,
+			);
+			path = ToolbarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9604EE252C3D74320088D47C /* AudioRecordView.swift in Sources */,
+				9604EE272C3DA7680088D47C /* Toolbar.swift in Sources */,
 				6AC0274A2C3CD2CB0052CBFD /* ContentView.swift in Sources */,
+				9604EE2A2C3DA99F0088D47C /* Navbar.swift in Sources */,
 				6AC0274C2C3CD2CB0052CBFD /* Item.swift in Sources */,
 				6AC027482C3CD2CB0052CBFD /* iAmApp.swift in Sources */,
+				9604EE2C2C3DB6EA0088D47C /* AudioRecordToolbarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
