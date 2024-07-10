@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct Toolbar: View {
+//    @State public var toggledView: String
+    
     var body: some View {
         NavigationStack {
-            Text("content") //content goes here idk how :p
+            EmptyView()
                 .toolbar {
                     ToolbarItem(placement: .bottomBar) {
                         HStack {
@@ -45,9 +47,18 @@ struct Toolbar: View {
                     }
                 }
         }
+//        if toggledView == "checklist" {
+//            EmptyView()
+//        } else if toggledView == "camera" {
+//            EmptyView()
+//        } else if toggledView == "mic" {
+//            AudioRecordToolbarView()
+//        } else if toggledView == "bubble" {
+//            EmptyView()
+//        }
     }
 }
 
-#Preview {
-    Toolbar()
-}
+//#Preview {
+//    Toolbar(toggledView: <#String#>)
+//}

@@ -10,7 +10,7 @@ import SwiftUI
 struct Navbar: View {
     var body: some View {
         NavigationStack {
-            Text("content") //content goes here gw blm tau cara gantinya gmn uwu
+            EmptyView() //content goes here gw blm tau cara gantinya gmn uwu
                 .toolbar {
                     ToolbarItem (placement: .topBarLeading) {
                         
@@ -25,15 +25,15 @@ struct Navbar: View {
                     }
                     ToolbarItem (placement: .topBarTrailing) {
                         Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                                                        Image(systemName: "ellipsis.circle").fontWeight(.medium)
-                                                    })
-                                                    .foregroundStyle(.mint)
+                            Image(systemName: "ellipsis.circle").fontWeight(.medium)
+                        })
+                        .foregroundStyle(.mint)
                     }
-                            
-                            
                     
-                    }
-                
+                    
+                    
+                }
+            
         }
     }
 }

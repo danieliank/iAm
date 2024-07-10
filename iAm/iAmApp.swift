@@ -25,7 +25,7 @@ struct iAmApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            JournalView()
         }
         .modelContainer(sharedModelContainer)
     }
