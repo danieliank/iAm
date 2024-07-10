@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4764C7B72C3E475F001A1673 /* Unpleasant 1.json in Resources */ = {isa = PBXBuildFile; fileRef = 4764C7B52C3E475F001A1673 /* Unpleasant 1.json */; };
+		4764C7B82C3E475F001A1673 /* Unpleasant 2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4764C7B62C3E475F001A1673 /* Unpleasant 2.json */; };
 		6AC027482C3CD2CB0052CBFD /* iAmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC027472C3CD2CB0052CBFD /* iAmApp.swift */; };
 		6AC0274A2C3CD2CB0052CBFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC027492C3CD2CB0052CBFD /* ContentView.swift */; };
 		6AC0274C2C3CD2CB0052CBFD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0274B2C3CD2CB0052CBFD /* Item.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4764C7B52C3E475F001A1673 /* Unpleasant 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Unpleasant 1.json"; sourceTree = "<group>"; };
+		4764C7B62C3E475F001A1673 /* Unpleasant 2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Unpleasant 2.json"; sourceTree = "<group>"; };
 		6AC027442C3CD2CB0052CBFD /* iAm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC027472C3CD2CB0052CBFD /* iAmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAmApp.swift; sourceTree = "<group>"; };
 		6AC027492C3CD2CB0052CBFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +46,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4764C7B92C3E4771001A1673 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				4764C7B52C3E475F001A1673 /* Unpleasant 1.json */,
+				4764C7B62C3E475F001A1673 /* Unpleasant 2.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		6AC0273B2C3CD2CB0052CBFD = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +74,7 @@
 		6AC027462C3CD2CB0052CBFD /* iAm */ = {
 			isa = PBXGroup;
 			children = (
+				4764C7B92C3E4771001A1673 /* Animations */,
 				9604EE212C3D70FB0088D47C /* Model */,
 				9604EE202C3D70F20088D47C /* View Model */,
 				9604EE1F2C3D70E90088D47C /* View */,
@@ -172,7 +186,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4764C7B72C3E475F001A1673 /* Unpleasant 1.json in Resources */,
 				6AC027512C3CD2CC0052CBFD /* Preview Assets.xcassets in Resources */,
+				4764C7B82C3E475F001A1673 /* Unpleasant 2.json in Resources */,
 				6AC0274E2C3CD2CC0052CBFD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
