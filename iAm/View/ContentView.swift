@@ -25,7 +25,10 @@ struct ContentView: View {
                         }
                     }
                     Button {
-                        Router.shared.path.append(.noteView)
+                        let newNote = Note(mood: moodValue, content: "", timestamp: Date())
+                        context.insert(newNote)
+
+                        Router.shared.path.append(.noteView(note: newNote))
                     } label: {
                         Text("Log")
                             .padding(.vertical, 12)
@@ -40,7 +43,7 @@ struct ContentView: View {
                 List {
                     ForEach (notes) { note in
                         NavigationLink {
-                            NoteView()
+                            NoteView(note: note)
                         } label: {
                             HStack {
                                 Image(systemName: note.mood.image)
@@ -66,8 +69,8 @@ struct ContentView: View {
             }
             .navigationDestination(for: Destination.self) { destination in
                     switch destination {
-                        case .noteView:
-                            NoteView()
+                        case .noteView(let note):
+                            NoteView(note: note)
                     }
             }
             .ignoresSafeArea()

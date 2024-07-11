@@ -10,11 +10,11 @@ import SwiftUI
 import SwiftData
 
 struct NoteView: View {
-    @State var content = ""
+    @Bindable var note: Note
     
     var body: some View {
         VStack {
-            TextField("note", text: $content)
+            TextField("note", text: $note.content)
             Spacer()
         }
         .toolbar {
@@ -41,7 +41,7 @@ struct NoteView: View {
 
 #Preview {
     NavigationStack {
-        NoteView()
+        NoteView(note: SampleData.shared.note)
     }
     .modelContainer(SampleData.shared.modelContainer)
 }

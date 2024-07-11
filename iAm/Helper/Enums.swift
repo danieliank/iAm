@@ -45,6 +45,6 @@ enum Mood: Codable, CaseIterable {
     }
 }
 
-enum Destination: String, Hashable {
-    case noteView
+enum Destination: Hashable {
+    case noteView(note: Note)
 }
