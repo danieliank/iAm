@@ -10,7 +10,6 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var context
-    @Query(sort: \Note.timestamp, order: .reverse) private var notes: [Note]
 
     @State var moodValue: Mood = .neutral
     @StateObject var navPath = Router.shared
@@ -39,33 +38,7 @@ struct ContentView: View {
 
                 }
                 .frame(height: UIScreen.main.bounds.height)
-                
-                List {
-                    ForEach (notes) { note in
-                        NavigationLink {
-                            NoteView(note: note)
-                        } label: {
-                            HStack {
-                                Image(note.mood.image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: 40)
-                                VStack {
-                                    Text(note.timestamp, format: Date.FormatStyle()
-                                        .month(.abbreviated)
-                                        .day(.defaultDigits))
-                                    Text(note.timestamp, format: Date.FormatStyle()
-                                            .hour(.twoDigits(amPM: .omitted))
-                                            .minute(.twoDigits))
-                                }
-                            }
-                        }
-                    }
-                    .onDelete(perform: deleteNotes)
-                    
-                }
-                .frame(height: UIScreen.main.bounds.height)
-                
+                HistoryView()
             }
             .navigationDestination(for: Destination.self) { destination in
                     switch destination {
@@ -74,14 +47,6 @@ struct ContentView: View {
                     }
             }
             .ignoresSafeArea()
-        }
-    }
-
-    private func deleteNotes(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                context.delete(notes[index])
-            }
         }
     }
 }
