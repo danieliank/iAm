@@ -45,7 +45,7 @@ struct AudioRecordView: View {
                     }
                 }
         }
-        Image("MicButton")
+        AudioRecordToolbarView()
     }
 }
 

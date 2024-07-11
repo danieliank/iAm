@@ -8,38 +8,38 @@
 import Foundation
 
 enum Mood: Codable, CaseIterable {
-    case veryUnpleasant
     case unpleasant
+    case slightlyUnpleasant
     case neutral
+    case slightlyPleasant
     case pleasant
-    case veryPleasant
     
     var title: String {
         switch self {
-        case .veryUnpleasant:
-            return "Very Unpleasant"
         case .unpleasant:
-            return "Unpleasant"
+            return "Unpleasent"
+        case .slightlyUnpleasant:
+            return "Slightly Unpleasant"
         case .neutral:
             return "Neutral"
-        case .pleasant:
+        case .slightlyPleasant:
             return "Pleasant"
-        case .veryPleasant:
+        case .pleasant:
             return "Very Pleasant"
         }
     }
     
     var image: String {
         switch self {
-        case .veryUnpleasant:
-            return "arrow.down.left.circle.fill"
         case .unpleasant:
+            return "arrow.down.left.circle.fill"
+        case .slightlyUnpleasant:
             return "arrow.up.left.circle.fill"
         case .neutral:
             return "arrow.up.circle.fill"
-        case .pleasant:
+        case .slightlyPleasant:
             return "arrow.up.forward.circle.fill"
-        case .veryPleasant:
+        case .pleasant:
             return "arrow.down.forward.circle.fill"
         }
     }

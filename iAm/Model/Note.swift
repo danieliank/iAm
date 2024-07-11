@@ -25,10 +25,10 @@ class Note {
     }
     
     static let sampleData = [
-        Note(mood: .veryUnpleasant, content: "Saya sangat tidak senang", timestamp: Calendar.current.date(byAdding: .day, value: -2, to: Date()) ?? Date()),
-        Note(mood: .unpleasant, content: "Saya tidak senang", timestamp: Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date()),
+        Note(mood: .unpleasant, content: "Saya sangat tidak senang", timestamp: Calendar.current.date(byAdding: .day, value: -2, to: Date()) ?? Date()),
+        Note(mood: .slightlyPleasant, content: "Saya tidak senang", timestamp: Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date()),
         Note(mood: .neutral, content: "Saya netral", timestamp: Date()),
-        Note(mood: .pleasant, content: "Saya senang", timestamp: Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date()),
-        Note(mood: .veryPleasant, content: "Saya sangat senang", timestamp: Calendar.current.date(byAdding: .day, value: 2, to: Date()) ?? Date())
+        Note(mood: .slightlyPleasant, content: "Saya senang", timestamp: Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date()),
+        Note(mood: .pleasant, content: "Saya sangat senang", timestamp: Calendar.current.date(byAdding: .day, value: 2, to: Date()) ?? Date())
     ]
 }
