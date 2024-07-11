@@ -13,16 +13,23 @@ struct ContentView: View {
 
     @State var moodValue: Mood = .neutral
     @StateObject var navPath = Router.shared
-    
+
     var body: some View {
         NavigationStack(path: $navPath.path) {
             ScrollView(.vertical) {
                 VStack {
-                    Picker("Mood", selection: $moodValue) {
+                    TabView(selection: $moodValue) {
                         ForEach(Mood.allCases, id: \.self) { mood in
-                            Text(mood.title).tag(mood)
+                            VStack {
+                                Image(mood.image)
+                                Text(mood.title)
+                                    .tag(mood)
+                            }
                         }
                     }
+                    .padding(.bottom, -40)
+                    .tabViewStyle(.page(indexDisplayMode: .always))
+                    .indexViewStyle(.page(backgroundDisplayMode: .always))
                     Button {
                         let newNote = Note(mood: moodValue, content: "", timestamp: Date())
                         context.insert(newNote)
@@ -35,16 +42,16 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .background(.black)
                     }
-
                 }
                 .frame(height: UIScreen.main.bounds.height)
+    
                 HistoryView()
             }
             .navigationDestination(for: Destination.self) { destination in
-                    switch destination {
-                        case .noteView(let note):
-                            NoteView(note: note)
-                    }
+                switch destination {
+                case .noteView(let note):
+                    NoteView(note: note)
+                }
             }
             .ignoresSafeArea()
         }
@@ -55,3 +62,5 @@ struct ContentView: View {
     ContentView()
         .modelContainer(SampleData.shared.modelContainer)
 }
+
+

@@ -17,7 +17,7 @@ enum Mood: Codable, CaseIterable {
     var title: String {
         switch self {
         case .unpleasant:
-            return "Unpleasent"
+            return "Unpleasant"
         case .slightlyUnpleasant:
             return "Slightly Unpleasant"
         case .neutral:
