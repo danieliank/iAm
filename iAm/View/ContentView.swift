@@ -41,7 +41,7 @@ struct ContentView: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
+            let newItem = Note(mood: .neutral, content: "", timestamp: Date())
             modelContext.insert(newItem)
         }
     }
@@ -57,5 +57,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Note.self, inMemory: true)
+        .modelContainer(SampleData.shared.modelContainer)
 }
