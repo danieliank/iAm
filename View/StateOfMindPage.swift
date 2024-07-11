@@ -8,33 +8,46 @@
 import SwiftUI
 
 struct StateOfMindPage: View {
+    @State private var showNotePage = false
+    @State private var buttonColor: [Color] = [.unpleasant,.slightlyUnpleasant,.neutral,.slightlyPleasant, .pleasant]
+    @State private var selectedIndex: Int = 0
+    @State var selectedStateOfMind: StateOfMindModel = MockData.stateOfMinds[0]
+    
+    
     var body: some View {
-        VStack {
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                
-                HStack(spacing: 0){
-                    ForEach(MockData.stateOfMinds) { state in
+        NavigationView {
+            VStack {
+                TabView(selection: $selectedIndex) {
+                    ForEach(Array(MockData.stateOfMinds.enumerated()), id: \.offset) { index, state in
                         StateOfMindCard(
                             imageName: state.imageName,
                             name: state.name
                         )
+                        .opacity(index == selectedIndex ? 1.5 : 0.3)
+                    }
+                    .padding(.top, 100)
+                }
+                .padding(.bottom, -40)
+                .tabViewStyle(.page(indexDisplayMode:.always))
+                .indexViewStyle(.page(backgroundDisplayMode:.always))
+                
+                NavigationLink(destination: NotePage(selectedStateOfMind: selectedStateOfMind), isActive: $showNotePage) {
+                    Button(action: {
+                        showNotePage = true
                         
-                                                
-                        .scrollTransition { content, phase in
-                            content
-                                .opacity(phase.isIdentity ? 1 : 0.0)
-                                .scaleEffect(x: phase.isIdentity ? 1 : 0.15,
-                                             y: phase.isIdentity ? 1 : 0.15 )
-                                .offset(y: phase.isIdentity ? 0 : -10)
-                            
-                        }
+                        selectedStateOfMind = MockData.stateOfMinds[selectedIndex]
+                        
+                    }) {
+                        Text("Write")
+                            .frame(width: 50, height: 18)
+                            .padding()
+                            .background(buttonColor[selectedIndex])
+                            .foregroundColor(.white)
+                            .cornerRadius(12)
                     }
                 }
-                .scrollTargetLayout()
-                
+                .padding([.top, .bottom], 120)
             }
-            .scrollTargetBehavior(.paging)
         }
     }
 }
@@ -50,16 +63,15 @@ struct StateOfMindCard: View {
                 .resizable()
                 .scaledToFit()
                 .frame(height: 200)
-//                .shadow(radius: 12)
-                .containerRelativeFrame(.horizontal, count: 1, spacing: 0)
-
+            
             Text(name)
                 .font(.title)
-
+            
         }
+        .padding(.bottom, 30)
     }
 }
 
 #Preview {
-    StateOfMindPage()
+    StateOfMindPage(selectedStateOfMind: StateOfMindModel(imageName: "Normal", name: "normal"))
 }
