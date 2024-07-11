@@ -32,15 +32,15 @@ enum Mood: Codable, CaseIterable {
     var image: String {
         switch self {
         case .unpleasant:
-            return "arrow.down.left.circle.fill"
+            return "Unpleasant"
         case .slightlyUnpleasant:
-            return "arrow.up.left.circle.fill"
+            return "SlightlyUnpleasant"
         case .neutral:
-            return "arrow.up.circle.fill"
+            return "Neutral"
         case .slightlyPleasant:
-            return "arrow.up.forward.circle.fill"
+            return "SlightlyPleasant"
         case .pleasant:
-            return "arrow.down.forward.circle.fill"
+            return "Pleasant"
         }
     }
 }

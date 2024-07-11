@@ -46,7 +46,7 @@ struct ContentView: View {
                             NoteView(note: note)
                         } label: {
                             HStack {
-                                Image(systemName: note.mood.image)
+                                Image(note.mood.image)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 40)
