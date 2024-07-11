@@ -9,47 +9,75 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var notes: [Note]
+    @Environment(\.modelContext) private var context
+    @Query(sort: \Note.timestamp, order: .reverse) private var notes: [Note]
 
+    @State var moodValue: Mood = .neutral
+    @StateObject var navPath = Router.shared
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(notes) { note in
-                    NavigationLink {
-                        Text("Item at \(note.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+        NavigationStack(path: $navPath.path) {
+            ScrollView(.vertical) {
+                VStack {
+                    Picker("Mood", selection: $moodValue) {
+                        ForEach(Mood.allCases, id: \.self) { mood in
+                            Text(mood.title).tag(mood)
+                        }
+                    }
+                    Button {
+                        Router.shared.path.append(.noteView)
                     } label: {
-                        Text(note.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text("Log")
+                            .padding(.vertical, 12)
+                            .padding(.horizontal, 20)
+                            .foregroundColor(.white)
+                            .background(.black)
                     }
+
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                .frame(height: UIScreen.main.bounds.height)
+                
+                List {
+                    ForEach (notes) { note in
+                        NavigationLink {
+                            NoteView()
+                        } label: {
+                            HStack {
+                                Image(systemName: note.mood.image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 40)
+                                VStack {
+                                    Text(note.timestamp, format: Date.FormatStyle()
+                                        .month(.abbreviated)
+                                        .day(.defaultDigits))
+                                    Text(note.timestamp, format: Date.FormatStyle()
+                                            .hour(.twoDigits(amPM: .omitted))
+                                            .minute(.twoDigits))
+                                }
+                            }
+                        }
                     }
+                    .onDelete(perform: deleteNotes)
+                    
                 }
+                .frame(height: UIScreen.main.bounds.height)
+                
             }
-        } detail: {
-            Text("Select an item")
+            .navigationDestination(for: Destination.self) { destination in
+                    switch destination {
+                        case .noteView:
+                            NoteView()
+                    }
+            }
+            .ignoresSafeArea()
         }
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Note(mood: .neutral, content: "", timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteNotes(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(notes[index])
+                context.delete(notes[index])
             }
         }
     }
