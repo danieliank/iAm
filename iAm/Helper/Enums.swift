@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum Mood: Codable, CaseIterable {
     case unpleasant
@@ -43,6 +44,23 @@ enum Mood: Codable, CaseIterable {
             return "Pleasant"
         }
     }
+    
+    var color: Color {
+        switch self {
+        case .unpleasant:
+            return .blue
+        case .slightlyUnpleasant:
+            return .mint
+        case .neutral:
+            return .green
+        case .slightlyPleasant:
+            return .yellow
+        case .pleasant:
+            return .orange
+        }
+    }
+    
+    // TODO: add prompt
 }
 
 enum Destination: Hashable {

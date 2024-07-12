@@ -24,6 +24,7 @@ struct ContentView: View {
                                 Image(mood.image)
                                 Text(mood.title)
                                     .tag(mood)
+//                                    .foregroundColor(mood.color)
                             }
                         }
                     }
