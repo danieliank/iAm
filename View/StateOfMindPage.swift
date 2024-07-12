@@ -73,5 +73,5 @@ struct StateOfMindCard: View {
 }
 
 #Preview {
-    StateOfMindPage(selectedStateOfMind: StateOfMindModel(imageName: "Normal", name: "normal"))
+    StateOfMindPage(selectedStateOfMind: MockData.stateOfMinds[0])
 }
