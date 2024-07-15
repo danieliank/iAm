@@ -12,14 +12,14 @@ import SwiftData
 class Note {
     var mood: Mood
     var content: String
-    var image: String?
+    var noteImage: Data?
     var audio: String?
     var timestamp: Date
     
-    init(mood: Mood, content: String, image: String? = nil, audio: String? = nil, timestamp: Date) {
+    init(mood: Mood, content: String, noteImage: Data? = nil, audio: String? = nil, timestamp: Date) {
         self.mood = mood
         self.content = content
-        self.image = image
+        self.noteImage = noteImage
         self.audio = audio
         self.timestamp = timestamp
     }
