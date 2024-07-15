@@ -19,6 +19,16 @@
 		4764C7E02C3F6E05001A1673 /* AnimationNeutral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C7DF2C3F6E05001A1673 /* AnimationNeutral.swift */; };
 		4764C7E22C3F6E4C001A1673 /* AnimationSlightlyPleasant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C7E12C3F6E4C001A1673 /* AnimationSlightlyPleasant.swift */; };
 		4764C7E42C3F6E79001A1673 /* AnimationPleasant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C7E32C3F6E79001A1673 /* AnimationPleasant.swift */; };
+		4764C7EC2C44EBBB001A1673 /* Slightly Pleasant-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 4764C7E72C44EBBA001A1673 /* Slightly Pleasant-dark.json */; };
+		4764C7ED2C44EBBB001A1673 /* Neutral-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 4764C7E82C44EBBB001A1673 /* Neutral-dark.json */; };
+		4764C7EE2C44EBBB001A1673 /* Pleasant-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 4764C7E92C44EBBB001A1673 /* Pleasant-dark.json */; };
+		4764C7EF2C44EBBB001A1673 /* Slightly Unpleasant-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 4764C7EA2C44EBBB001A1673 /* Slightly Unpleasant-dark.json */; };
+		4764C7F02C44EBBB001A1673 /* Unpleasant-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 4764C7EB2C44EBBB001A1673 /* Unpleasant-dark.json */; };
+		4764C7F22C44EBE4001A1673 /* AnimationUnpleasantDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C7F12C44EBE4001A1673 /* AnimationUnpleasantDark.swift */; };
+		4764C7F42C44EC2E001A1673 /* AnimationSlightlyUnpleasantDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C7F32C44EC2E001A1673 /* AnimationSlightlyUnpleasantDark.swift */; };
+		4764C7F62C44EC5F001A1673 /* AnimationNeutralDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C7F52C44EC5F001A1673 /* AnimationNeutralDark.swift */; };
+		4764C7F82C44EC95001A1673 /* AnimationSlightlyPleasantDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C7F72C44EC95001A1673 /* AnimationSlightlyPleasantDark.swift */; };
+		4764C7FA2C44ECC0001A1673 /* AnimationPleasantDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C7F92C44ECC0001A1673 /* AnimationPleasantDark.swift */; };
 		6AC027482C3CD2CB0052CBFD /* iAmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC027472C3CD2CB0052CBFD /* iAmApp.swift */; };
 		6AC0274A2C3CD2CB0052CBFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC027492C3CD2CB0052CBFD /* ContentView.swift */; };
 		6AC0274C2C3CD2CB0052CBFD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0274B2C3CD2CB0052CBFD /* Item.swift */; };
@@ -42,6 +52,16 @@
 		4764C7DF2C3F6E05001A1673 /* AnimationNeutral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationNeutral.swift; sourceTree = "<group>"; };
 		4764C7E12C3F6E4C001A1673 /* AnimationSlightlyPleasant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSlightlyPleasant.swift; sourceTree = "<group>"; };
 		4764C7E32C3F6E79001A1673 /* AnimationPleasant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPleasant.swift; sourceTree = "<group>"; };
+		4764C7E72C44EBBA001A1673 /* Slightly Pleasant-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Slightly Pleasant-dark.json"; sourceTree = "<group>"; };
+		4764C7E82C44EBBB001A1673 /* Neutral-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Neutral-dark.json"; sourceTree = "<group>"; };
+		4764C7E92C44EBBB001A1673 /* Pleasant-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Pleasant-dark.json"; sourceTree = "<group>"; };
+		4764C7EA2C44EBBB001A1673 /* Slightly Unpleasant-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Slightly Unpleasant-dark.json"; sourceTree = "<group>"; };
+		4764C7EB2C44EBBB001A1673 /* Unpleasant-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Unpleasant-dark.json"; sourceTree = "<group>"; };
+		4764C7F12C44EBE4001A1673 /* AnimationUnpleasantDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUnpleasantDark.swift; sourceTree = "<group>"; };
+		4764C7F32C44EC2E001A1673 /* AnimationSlightlyUnpleasantDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSlightlyUnpleasantDark.swift; sourceTree = "<group>"; };
+		4764C7F52C44EC5F001A1673 /* AnimationNeutralDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationNeutralDark.swift; sourceTree = "<group>"; };
+		4764C7F72C44EC95001A1673 /* AnimationSlightlyPleasantDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSlightlyPleasantDark.swift; sourceTree = "<group>"; };
+		4764C7F92C44ECC0001A1673 /* AnimationPleasantDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPleasantDark.swift; sourceTree = "<group>"; };
 		6AC027442C3CD2CB0052CBFD /* iAm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC027472C3CD2CB0052CBFD /* iAmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAmApp.swift; sourceTree = "<group>"; };
 		6AC027492C3CD2CB0052CBFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,15 +91,25 @@
 			children = (
 				4764C7D12C3E5920001A1673 /* LottieView.swift */,
 				4764C7D32C3E59E3001A1673 /* Unpleasant.json */,
+				4764C7EB2C44EBBB001A1673 /* Unpleasant-dark.json */,
 				4764C7CF2C3E58E8001A1673 /* Slightly Unpleasant.json */,
+				4764C7EA2C44EBBB001A1673 /* Slightly Unpleasant-dark.json */,
 				4764C7DB2C3F6DF2001A1673 /* Neutral.json */,
+				4764C7E82C44EBBB001A1673 /* Neutral-dark.json */,
 				4764C7DA2C3F6DF2001A1673 /* Slightly Pleasant.json */,
+				4764C7E72C44EBBA001A1673 /* Slightly Pleasant-dark.json */,
 				4764C7D92C3F6DF2001A1673 /* Pleasant.json */,
+				4764C7E92C44EBBB001A1673 /* Pleasant-dark.json */,
 				4764C7D72C3E5BA0001A1673 /* AnimationUnpleasant.swift */,
+				4764C7F12C44EBE4001A1673 /* AnimationUnpleasantDark.swift */,
 				4764C7D52C3E5B77001A1673 /* AnimationSlightlyUnpleasant.swift */,
+				4764C7F32C44EC2E001A1673 /* AnimationSlightlyUnpleasantDark.swift */,
 				4764C7DF2C3F6E05001A1673 /* AnimationNeutral.swift */,
+				4764C7F52C44EC5F001A1673 /* AnimationNeutralDark.swift */,
 				4764C7E12C3F6E4C001A1673 /* AnimationSlightlyPleasant.swift */,
+				4764C7F72C44EC95001A1673 /* AnimationSlightlyPleasantDark.swift */,
 				4764C7E32C3F6E79001A1673 /* AnimationPleasant.swift */,
+				4764C7F92C44ECC0001A1673 /* AnimationPleasantDark.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -222,11 +252,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AC027512C3CD2CC0052CBFD /* Preview Assets.xcassets in Resources */,
+				4764C7EF2C44EBBB001A1673 /* Slightly Unpleasant-dark.json in Resources */,
 				4764C7D02C3E58E8001A1673 /* Slightly Unpleasant.json in Resources */,
+				4764C7EC2C44EBBB001A1673 /* Slightly Pleasant-dark.json in Resources */,
+				4764C7ED2C44EBBB001A1673 /* Neutral-dark.json in Resources */,
 				4764C7D42C3E59E3001A1673 /* Unpleasant.json in Resources */,
 				4764C7DE2C3F6DF2001A1673 /* Neutral.json in Resources */,
 				6AC0274E2C3CD2CC0052CBFD /* Assets.xcassets in Resources */,
+				4764C7EE2C44EBBB001A1673 /* Pleasant-dark.json in Resources */,
 				4764C7DD2C3F6DF2001A1673 /* Slightly Pleasant.json in Resources */,
+				4764C7F02C44EBBB001A1673 /* Unpleasant-dark.json in Resources */,
 				4764C7DC2C3F6DF2001A1673 /* Pleasant.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,11 +275,16 @@
 			files = (
 				9604EE252C3D74320088D47C /* AudioRecordView.swift in Sources */,
 				9604EE272C3DA7680088D47C /* Toolbar.swift in Sources */,
+				4764C7F62C44EC5F001A1673 /* AnimationNeutralDark.swift in Sources */,
 				4764C7E42C3F6E79001A1673 /* AnimationPleasant.swift in Sources */,
 				6AC0274A2C3CD2CB0052CBFD /* ContentView.swift in Sources */,
 				9604EE2A2C3DA99F0088D47C /* Navbar.swift in Sources */,
 				6AC0274C2C3CD2CB0052CBFD /* Item.swift in Sources */,
+				4764C7F42C44EC2E001A1673 /* AnimationSlightlyUnpleasantDark.swift in Sources */,
+				4764C7FA2C44ECC0001A1673 /* AnimationPleasantDark.swift in Sources */,
 				4764C7E02C3F6E05001A1673 /* AnimationNeutral.swift in Sources */,
+				4764C7F22C44EBE4001A1673 /* AnimationUnpleasantDark.swift in Sources */,
+				4764C7F82C44EC95001A1673 /* AnimationSlightlyPleasantDark.swift in Sources */,
 				6AC027482C3CD2CB0052CBFD /* iAmApp.swift in Sources */,
 				4764C7D82C3E5BA0001A1673 /* AnimationUnpleasant.swift in Sources */,
 				4764C7D22C3E5920001A1673 /* LottieView.swift in Sources */,
