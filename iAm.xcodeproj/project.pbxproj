@@ -10,16 +10,6 @@
 		6A3281042C401CA300466B16 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3281032C401CA300466B16 /* HistoryView.swift */; };
 		6A3281062C40206C00466B16 /* StateOfMindCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3281052C40206C00466B16 /* StateOfMindCard.swift */; };
 		6A3344952C44FB2A004E902D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6A3344942C44FB2A004E902D /* Lottie */; };
-		6A93CA0E2C44FC120084ECBE /* AnimationNeutral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93C9F82C44FC120084ECBE /* AnimationNeutral.swift */; };
-		6A93CA0F2C44FC120084ECBE /* AnimationNeutralDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93C9F92C44FC120084ECBE /* AnimationNeutralDark.swift */; };
-		6A93CA102C44FC120084ECBE /* AnimationPleasant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93C9FA2C44FC120084ECBE /* AnimationPleasant.swift */; };
-		6A93CA112C44FC120084ECBE /* AnimationPleasantDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93C9FB2C44FC120084ECBE /* AnimationPleasantDark.swift */; };
-		6A93CA122C44FC120084ECBE /* AnimationSlightlyPleasant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93C9FC2C44FC120084ECBE /* AnimationSlightlyPleasant.swift */; };
-		6A93CA132C44FC120084ECBE /* AnimationSlightlyPleasantDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93C9FD2C44FC120084ECBE /* AnimationSlightlyPleasantDark.swift */; };
-		6A93CA142C44FC120084ECBE /* AnimationSlightlyUnpleasant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93C9FE2C44FC120084ECBE /* AnimationSlightlyUnpleasant.swift */; };
-		6A93CA152C44FC120084ECBE /* AnimationSlightlyUnpleasantDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93C9FF2C44FC120084ECBE /* AnimationSlightlyUnpleasantDark.swift */; };
-		6A93CA162C44FC120084ECBE /* AnimationUnpleasant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93CA002C44FC120084ECBE /* AnimationUnpleasant.swift */; };
-		6A93CA172C44FC120084ECBE /* AnimationUnpleasantDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93CA012C44FC120084ECBE /* AnimationUnpleasantDark.swift */; };
 		6A93CA182C44FC120084ECBE /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93CA022C44FC120084ECBE /* LottieView.swift */; };
 		6A93CA192C44FC120084ECBE /* Neutral-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA032C44FC120084ECBE /* Neutral-dark.json */; };
 		6A93CA1A2C44FC120084ECBE /* Neutral.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA042C44FC120084ECBE /* Neutral.json */; };
@@ -49,16 +39,6 @@
 /* Begin PBXFileReference section */
 		6A3281032C401CA300466B16 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		6A3281052C40206C00466B16 /* StateOfMindCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateOfMindCard.swift; sourceTree = "<group>"; };
-		6A93C9F82C44FC120084ECBE /* AnimationNeutral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationNeutral.swift; sourceTree = "<group>"; };
-		6A93C9F92C44FC120084ECBE /* AnimationNeutralDark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationNeutralDark.swift; sourceTree = "<group>"; };
-		6A93C9FA2C44FC120084ECBE /* AnimationPleasant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationPleasant.swift; sourceTree = "<group>"; };
-		6A93C9FB2C44FC120084ECBE /* AnimationPleasantDark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationPleasantDark.swift; sourceTree = "<group>"; };
-		6A93C9FC2C44FC120084ECBE /* AnimationSlightlyPleasant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationSlightlyPleasant.swift; sourceTree = "<group>"; };
-		6A93C9FD2C44FC120084ECBE /* AnimationSlightlyPleasantDark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationSlightlyPleasantDark.swift; sourceTree = "<group>"; };
-		6A93C9FE2C44FC120084ECBE /* AnimationSlightlyUnpleasant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationSlightlyUnpleasant.swift; sourceTree = "<group>"; };
-		6A93C9FF2C44FC120084ECBE /* AnimationSlightlyUnpleasantDark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationSlightlyUnpleasantDark.swift; sourceTree = "<group>"; };
-		6A93CA002C44FC120084ECBE /* AnimationUnpleasant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationUnpleasant.swift; sourceTree = "<group>"; };
-		6A93CA012C44FC120084ECBE /* AnimationUnpleasantDark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationUnpleasantDark.swift; sourceTree = "<group>"; };
 		6A93CA022C44FC120084ECBE /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		6A93CA032C44FC120084ECBE /* Neutral-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Neutral-dark.json"; sourceTree = "<group>"; };
 		6A93CA042C44FC120084ECBE /* Neutral.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Neutral.json; sourceTree = "<group>"; };
@@ -98,32 +78,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6A93CA0D2C44FC120084ECBE /* Animations */ = {
+		6A93CA232C44FD1C0084ECBE /* MoodLottie */ = {
 			isa = PBXGroup;
 			children = (
-				6A93C9F82C44FC120084ECBE /* AnimationNeutral.swift */,
-				6A93C9F92C44FC120084ECBE /* AnimationNeutralDark.swift */,
-				6A93C9FA2C44FC120084ECBE /* AnimationPleasant.swift */,
-				6A93C9FB2C44FC120084ECBE /* AnimationPleasantDark.swift */,
-				6A93C9FC2C44FC120084ECBE /* AnimationSlightlyPleasant.swift */,
-				6A93C9FD2C44FC120084ECBE /* AnimationSlightlyPleasantDark.swift */,
-				6A93C9FE2C44FC120084ECBE /* AnimationSlightlyUnpleasant.swift */,
-				6A93C9FF2C44FC120084ECBE /* AnimationSlightlyUnpleasantDark.swift */,
-				6A93CA002C44FC120084ECBE /* AnimationUnpleasant.swift */,
-				6A93CA012C44FC120084ECBE /* AnimationUnpleasantDark.swift */,
-				6A93CA022C44FC120084ECBE /* LottieView.swift */,
-				6A93CA032C44FC120084ECBE /* Neutral-dark.json */,
+				6A93CA242C44FD2F0084ECBE /* Light */,
+				6A93CA252C44FD340084ECBE /* Dark */,
+			);
+			path = MoodLottie;
+			sourceTree = "<group>";
+		};
+		6A93CA242C44FD2F0084ECBE /* Light */ = {
+			isa = PBXGroup;
+			children = (
 				6A93CA042C44FC120084ECBE /* Neutral.json */,
-				6A93CA052C44FC120084ECBE /* Pleasant-dark.json */,
 				6A93CA062C44FC120084ECBE /* Pleasant.json */,
-				6A93CA072C44FC120084ECBE /* SlightlyPleasant-dark.json */,
 				6A93CA082C44FC120084ECBE /* SlightlyPleasant.json */,
-				6A93CA092C44FC120084ECBE /* SlightlyUnpleasant-dark.json */,
 				6A93CA0A2C44FC120084ECBE /* SlightlyUnpleasant.json */,
-				6A93CA0B2C44FC120084ECBE /* Unpleasant-dark.json */,
 				6A93CA0C2C44FC120084ECBE /* Unpleasant.json */,
 			);
-			path = Animations;
+			path = Light;
+			sourceTree = "<group>";
+		};
+		6A93CA252C44FD340084ECBE /* Dark */ = {
+			isa = PBXGroup;
+			children = (
+				6A93CA032C44FC120084ECBE /* Neutral-dark.json */,
+				6A93CA072C44FC120084ECBE /* SlightlyPleasant-dark.json */,
+				6A93CA092C44FC120084ECBE /* SlightlyUnpleasant-dark.json */,
+				6A93CA052C44FC120084ECBE /* Pleasant-dark.json */,
+				6A93CA0B2C44FC120084ECBE /* Unpleasant-dark.json */,
+			);
+			path = Dark;
 			sourceTree = "<group>";
 		};
 		6AC0273B2C3CD2CB0052CBFD = {
@@ -145,8 +130,8 @@
 		6AC027462C3CD2CB0052CBFD /* iAm */ = {
 			isa = PBXGroup;
 			children = (
-				6A93CA0D2C44FC120084ECBE /* Animations */,
 				CD25558D2C3F7A3A002702A8 /* Helper */,
+				6A93CA232C44FD1C0084ECBE /* MoodLottie */,
 				9604EE212C3D70FB0088D47C /* Model */,
 				9604EE202C3D70F20088D47C /* View Model */,
 				9604EE1F2C3D70E90088D47C /* View */,
@@ -168,6 +153,7 @@
 		9604EE1F2C3D70E90088D47C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6A93CA022C44FC120084ECBE /* LottieView.swift */,
 				6AC027492C3CD2CB0052CBFD /* ContentView.swift */,
 				6A3281052C40206C00466B16 /* StateOfMindCard.swift */,
 				6A3281032C401CA300466B16 /* HistoryView.swift */,
@@ -305,23 +291,13 @@
 				9604EE272C3DA7680088D47C /* Toolbar.swift in Sources */,
 				6AC0274A2C3CD2CB0052CBFD /* ContentView.swift in Sources */,
 				CD25558C2C3F7A15002702A8 /* Note.swift in Sources */,
-				6A93CA0E2C44FC120084ECBE /* AnimationNeutral.swift in Sources */,
 				9604EE2A2C3DA99F0088D47C /* Navbar.swift in Sources */,
-				6A93CA172C44FC120084ECBE /* AnimationUnpleasantDark.swift in Sources */,
-				6A93CA112C44FC120084ECBE /* AnimationPleasantDark.swift in Sources */,
 				6AC027482C3CD2CB0052CBFD /* iAmApp.swift in Sources */,
 				CD2555932C3F8051002702A8 /* NoteView.swift in Sources */,
-				6A93CA102C44FC120084ECBE /* AnimationPleasant.swift in Sources */,
-				6A93CA152C44FC120084ECBE /* AnimationSlightlyUnpleasantDark.swift in Sources */,
 				CD25558F2C3F7A5B002702A8 /* Enums.swift in Sources */,
 				6A3281062C40206C00466B16 /* StateOfMindCard.swift in Sources */,
-				6A93CA132C44FC120084ECBE /* AnimationSlightlyPleasantDark.swift in Sources */,
 				CD2555912C3F7B38002702A8 /* SampleData.swift in Sources */,
-				6A93CA162C44FC120084ECBE /* AnimationUnpleasant.swift in Sources */,
 				9604EE2C2C3DB6EA0088D47C /* AudioRecordToolbarView.swift in Sources */,
-				6A93CA142C44FC120084ECBE /* AnimationSlightlyUnpleasant.swift in Sources */,
-				6A93CA122C44FC120084ECBE /* AnimationSlightlyPleasant.swift in Sources */,
-				6A93CA0F2C44FC120084ECBE /* AnimationNeutralDark.swift in Sources */,
 				6A93CA182C44FC120084ECBE /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
