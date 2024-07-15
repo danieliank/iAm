@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AnimationSlightlyUnpleasantDark: View {
     var body: some View {
-        LottieView(animationFileName: "Slightly Unpleasant-dark", loopMode: .loop)
+        LottieView(animationFileName: "SlightlyUnpleasant-dark", loopMode: .loop)
             .frame(width: 200, height: 200)
     }
 }

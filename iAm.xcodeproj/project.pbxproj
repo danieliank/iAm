@@ -25,10 +25,10 @@
 		6A93CA1A2C44FC120084ECBE /* Neutral.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA042C44FC120084ECBE /* Neutral.json */; };
 		6A93CA1B2C44FC120084ECBE /* Pleasant-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA052C44FC120084ECBE /* Pleasant-dark.json */; };
 		6A93CA1C2C44FC120084ECBE /* Pleasant.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA062C44FC120084ECBE /* Pleasant.json */; };
-		6A93CA1D2C44FC120084ECBE /* Slightly Pleasant-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA072C44FC120084ECBE /* Slightly Pleasant-dark.json */; };
-		6A93CA1E2C44FC120084ECBE /* Slightly Pleasant.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA082C44FC120084ECBE /* Slightly Pleasant.json */; };
-		6A93CA1F2C44FC120084ECBE /* Slightly Unpleasant-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA092C44FC120084ECBE /* Slightly Unpleasant-dark.json */; };
-		6A93CA202C44FC120084ECBE /* Slightly Unpleasant.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA0A2C44FC120084ECBE /* Slightly Unpleasant.json */; };
+		6A93CA1D2C44FC120084ECBE /* SlightlyPleasant-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA072C44FC120084ECBE /* SlightlyPleasant-dark.json */; };
+		6A93CA1E2C44FC120084ECBE /* SlightlyPleasant.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA082C44FC120084ECBE /* SlightlyPleasant.json */; };
+		6A93CA1F2C44FC120084ECBE /* SlightlyUnpleasant-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA092C44FC120084ECBE /* SlightlyUnpleasant-dark.json */; };
+		6A93CA202C44FC120084ECBE /* SlightlyUnpleasant.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA0A2C44FC120084ECBE /* SlightlyUnpleasant.json */; };
 		6A93CA212C44FC120084ECBE /* Unpleasant-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA0B2C44FC120084ECBE /* Unpleasant-dark.json */; };
 		6A93CA222C44FC120084ECBE /* Unpleasant.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A93CA0C2C44FC120084ECBE /* Unpleasant.json */; };
 		6AC027482C3CD2CB0052CBFD /* iAmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC027472C3CD2CB0052CBFD /* iAmApp.swift */; };
@@ -64,10 +64,10 @@
 		6A93CA042C44FC120084ECBE /* Neutral.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Neutral.json; sourceTree = "<group>"; };
 		6A93CA052C44FC120084ECBE /* Pleasant-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Pleasant-dark.json"; sourceTree = "<group>"; };
 		6A93CA062C44FC120084ECBE /* Pleasant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Pleasant.json; sourceTree = "<group>"; };
-		6A93CA072C44FC120084ECBE /* Slightly Pleasant-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Slightly Pleasant-dark.json"; sourceTree = "<group>"; };
-		6A93CA082C44FC120084ECBE /* Slightly Pleasant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Slightly Pleasant.json"; sourceTree = "<group>"; };
-		6A93CA092C44FC120084ECBE /* Slightly Unpleasant-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Slightly Unpleasant-dark.json"; sourceTree = "<group>"; };
-		6A93CA0A2C44FC120084ECBE /* Slightly Unpleasant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Slightly Unpleasant.json"; sourceTree = "<group>"; };
+		6A93CA072C44FC120084ECBE /* SlightlyPleasant-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "SlightlyPleasant-dark.json"; sourceTree = "<group>"; };
+		6A93CA082C44FC120084ECBE /* SlightlyPleasant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SlightlyPleasant.json; sourceTree = "<group>"; };
+		6A93CA092C44FC120084ECBE /* SlightlyUnpleasant-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "SlightlyUnpleasant-dark.json"; sourceTree = "<group>"; };
+		6A93CA0A2C44FC120084ECBE /* SlightlyUnpleasant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SlightlyUnpleasant.json; sourceTree = "<group>"; };
 		6A93CA0B2C44FC120084ECBE /* Unpleasant-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Unpleasant-dark.json"; sourceTree = "<group>"; };
 		6A93CA0C2C44FC120084ECBE /* Unpleasant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Unpleasant.json; sourceTree = "<group>"; };
 		6AC027442C3CD2CB0052CBFD /* iAm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,10 +116,10 @@
 				6A93CA042C44FC120084ECBE /* Neutral.json */,
 				6A93CA052C44FC120084ECBE /* Pleasant-dark.json */,
 				6A93CA062C44FC120084ECBE /* Pleasant.json */,
-				6A93CA072C44FC120084ECBE /* Slightly Pleasant-dark.json */,
-				6A93CA082C44FC120084ECBE /* Slightly Pleasant.json */,
-				6A93CA092C44FC120084ECBE /* Slightly Unpleasant-dark.json */,
-				6A93CA0A2C44FC120084ECBE /* Slightly Unpleasant.json */,
+				6A93CA072C44FC120084ECBE /* SlightlyPleasant-dark.json */,
+				6A93CA082C44FC120084ECBE /* SlightlyPleasant.json */,
+				6A93CA092C44FC120084ECBE /* SlightlyUnpleasant-dark.json */,
+				6A93CA0A2C44FC120084ECBE /* SlightlyUnpleasant.json */,
 				6A93CA0B2C44FC120084ECBE /* Unpleasant-dark.json */,
 				6A93CA0C2C44FC120084ECBE /* Unpleasant.json */,
 			);
@@ -280,14 +280,14 @@
 				6A93CA212C44FC120084ECBE /* Unpleasant-dark.json in Resources */,
 				6A93CA192C44FC120084ECBE /* Neutral-dark.json in Resources */,
 				6A93CA222C44FC120084ECBE /* Unpleasant.json in Resources */,
-				6A93CA1D2C44FC120084ECBE /* Slightly Pleasant-dark.json in Resources */,
+				6A93CA1D2C44FC120084ECBE /* SlightlyPleasant-dark.json in Resources */,
 				6A93CA1C2C44FC120084ECBE /* Pleasant.json in Resources */,
-				6A93CA202C44FC120084ECBE /* Slightly Unpleasant.json in Resources */,
+				6A93CA202C44FC120084ECBE /* SlightlyUnpleasant.json in Resources */,
 				6AC027512C3CD2CC0052CBFD /* Preview Assets.xcassets in Resources */,
 				6A93CA1B2C44FC120084ECBE /* Pleasant-dark.json in Resources */,
-				6A93CA1F2C44FC120084ECBE /* Slightly Unpleasant-dark.json in Resources */,
+				6A93CA1F2C44FC120084ECBE /* SlightlyUnpleasant-dark.json in Resources */,
 				6AC0274E2C3CD2CC0052CBFD /* Assets.xcassets in Resources */,
-				6A93CA1E2C44FC120084ECBE /* Slightly Pleasant.json in Resources */,
+				6A93CA1E2C44FC120084ECBE /* SlightlyPleasant.json in Resources */,
 				6A93CA1A2C44FC120084ECBE /* Neutral.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
