@@ -18,29 +18,38 @@ struct ContentView: View {
         NavigationStack(path: $navPath.path) {
             ScrollView(.vertical) {
                 VStack {
+                    Text("How do you feel right now?")
+                        .font(.headline)
                     TabView(selection: $moodValue) {
                         ForEach(Mood.allCases, id: \.self) { mood in
                             VStack {
                                 Image(mood.image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 280)
+                                    .padding([.top,.bottom], 40)
+                                    
                                 Text(mood.title)
-                                .tag(mood)                         }
+                                .font(.system(size: 30, weight: .bold))}
                         }
-                    }
-                    .padding(.bottom, -40)
-                    .tabViewStyle(.page(indexDisplayMode: .always))
-                    .indexViewStyle(.page(backgroundDisplayMode: .always))
+                    } .frame(width: .infinity, height: 450)
+                    
+                        .tabViewStyle(.page(indexDisplayMode: .never))
+                    
                     Button {
                         let newNote = Note(mood: moodValue, content: "", timestamp: Date())
                         context.insert(newNote)
                         
                         Router.shared.path.append(.noteView(note: newNote))
                     } label: {
-                        Text("Log")
-                            .padding(.vertical, 12)
-                            .padding(.horizontal, 20)
+                        Text("Log Emotion")
+                            .frame(width: 115, height: 18)
+                            .padding()
+                            .background(.blue)
                             .foregroundColor(.white)
-                            .background(.black)
+                            .cornerRadius(12)
                     }
+                    .padding(.top, 50)
                 }
                 .frame(height: UIScreen.main.bounds.height)
                 

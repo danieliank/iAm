@@ -13,10 +13,13 @@ import PhotosUI
 struct NoteView: View {
     @Bindable var note: Note
     @State var selectedPhoto: PhotosPickerItem?
-    //    @State private var photoData: Data?
     
     var body: some View {
         VStack {
+            
+            //Selected StateOfMind
+            StateOfMindHeader(selectedStateOfMind: note.mood)
+            
             if let photoData = note.noteImage, let uiImage = UIImage(data: photoData) {
                 Image(uiImage: uiImage)
                     .resizable()
