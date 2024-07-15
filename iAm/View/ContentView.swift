@@ -10,10 +10,10 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var context
-
+    
     @State var moodValue: Mood = .neutral
     @StateObject var navPath = Router.shared
-
+    
     var body: some View {
         NavigationStack(path: $navPath.path) {
             ScrollView(.vertical) {
@@ -23,9 +23,7 @@ struct ContentView: View {
                             VStack {
                                 Image(mood.image)
                                 Text(mood.title)
-                                    .tag(mood)
-//                                    .foregroundColor(mood.color)
-                            }
+                                .tag(mood)                         }
                         }
                     }
                     .padding(.bottom, -40)
@@ -34,7 +32,7 @@ struct ContentView: View {
                     Button {
                         let newNote = Note(mood: moodValue, content: "", timestamp: Date())
                         context.insert(newNote)
-
+                        
                         Router.shared.path.append(.noteView(note: newNote))
                     } label: {
                         Text("Log")
@@ -45,7 +43,7 @@ struct ContentView: View {
                     }
                 }
                 .frame(height: UIScreen.main.bounds.height)
-    
+                
                 HistoryView()
             }
             .navigationDestination(for: Destination.self) { destination in
