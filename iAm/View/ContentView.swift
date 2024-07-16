@@ -10,8 +10,7 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var context
-    @Query(sort: \Note.timestamp, order: .reverse) private var notes: [Note]
-
+    
     @State var moodValue: Mood = .neutral
     @StateObject var navPath = Router.shared
     
@@ -19,15 +18,21 @@ struct ContentView: View {
         NavigationStack(path: $navPath.path) {
             ScrollView(.vertical) {
                 VStack {
-                    Picker("Mood", selection: $moodValue) {
+                    TabView(selection: $moodValue) {
                         ForEach(Mood.allCases, id: \.self) { mood in
-                            Text(mood.title).tag(mood)
+                            VStack {
+                                Image(mood.image)
+                                Text(mood.title)
+                                .tag(mood)                         }
                         }
                     }
+                    .padding(.bottom, -40)
+                    .tabViewStyle(.page(indexDisplayMode: .always))
+                    .indexViewStyle(.page(backgroundDisplayMode: .always))
                     Button {
                         let newNote = Note(mood: moodValue, content: "", timestamp: Date())
                         context.insert(newNote)
-
+                        
                         Router.shared.path.append(.noteView(note: newNote))
                     } label: {
                         Text("Log")
@@ -36,52 +41,18 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .background(.black)
                     }
-
                 }
                 .frame(height: UIScreen.main.bounds.height)
                 
-                List {
-                    ForEach (notes) { note in
-                        NavigationLink {
-                            NoteView(note: note)
-                        } label: {
-                            HStack {
-                                Image(systemName: note.mood.image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: 40)
-                                VStack {
-                                    Text(note.timestamp, format: Date.FormatStyle()
-                                        .month(.abbreviated)
-                                        .day(.defaultDigits))
-                                    Text(note.timestamp, format: Date.FormatStyle()
-                                            .hour(.twoDigits(amPM: .omitted))
-                                            .minute(.twoDigits))
-                                }
-                            }
-                        }
-                    }
-                    .onDelete(perform: deleteNotes)
-                    
-                }
-                .frame(height: UIScreen.main.bounds.height)
-                
+                HistoryView()
             }
             .navigationDestination(for: Destination.self) { destination in
-                    switch destination {
-                        case .noteView(let note):
-                            NoteView(note: note)
-                    }
+                switch destination {
+                case .noteView(let note):
+                    NoteView(note: note)
+                }
             }
             .ignoresSafeArea()
-        }
-    }
-
-    private func deleteNotes(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                context.delete(notes[index])
-            }
         }
     }
 }
@@ -90,3 +61,5 @@ struct ContentView: View {
     ContentView()
         .modelContainer(SampleData.shared.modelContainer)
 }
+
+
