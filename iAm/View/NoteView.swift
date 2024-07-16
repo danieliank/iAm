@@ -50,10 +50,6 @@ struct NoteView: View {
                 Button(action: {}, label: {
                     Image(systemName: "mic")
                 })
-                Spacer()
-                Button(action: {}, label: {
-                    Image(systemName: "bubble")
-                })
             }
         }
         
