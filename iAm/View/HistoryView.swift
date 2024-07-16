@@ -55,6 +55,7 @@ struct HistoryView: View {
                     
                 }
             }
+            .padding(.top, 5)
         }
         .padding(.leading, 0)
     }

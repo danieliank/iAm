@@ -14,15 +14,19 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack(path: $navPath.path) {
+                Text("iAm")
+                    .font(.system(size: 34, weight: .bold))
+                    .padding(.trailing, 290)
+
+           
             HistoryView()
-                .padding(.top, 24)
             .navigationDestination(for: Destination.self) { destination in
                 switch destination {
                 case .noteView(let note):
                     NoteView(note: note)
                 }
             }
-            .navigationTitle("iAm")
+
             .toolbar {
                 ToolbarItemGroup {
                     Button("Add", systemImage: "plus.circle.fill") {
