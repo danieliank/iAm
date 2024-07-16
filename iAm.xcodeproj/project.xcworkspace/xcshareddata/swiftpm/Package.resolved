@@ -1,5 +1,5 @@
 {
-  "originHash" : "eb3e6467aa3b79663b371a20cbe7f1b7c7a6a3c9f98e6945bc9704361b5ae42d",
+  "originHash" : "e2c81231b13ed1045421530ed0a14acd5cd7fbdbb60200efcb63a3f44738042f",
   "pins" : [
     {
       "identity" : "dswaveformimage",
@@ -9,10 +9,7 @@
         "revision" : "4c56578ee10128ee2b2c04c9c5aa73812de722db",
         "version" : "14.2.2"
       }
-    }
-  ]
-  "originHash" : "0271592b24e5dc1185a09e3f2d980d55521827815d397c9bce8e63d502a51e84",
-  "pins" : [
+    },
     {
       "identity" : "lottie-ios",
       "kind" : "remoteSourceControl",
@@ -25,4 +22,3 @@
   ],
   "version" : 3
 }
-
