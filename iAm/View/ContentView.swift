@@ -22,6 +22,8 @@ struct ContentView: View {
                         ForEach(Mood.allCases, id: \.self) { mood in
                             VStack {
                                 Image(mood.image)
+                                    .resizable()
+                                    .frame(width: 200, height: 200)
                                 Text(mood.title)
                                 .tag(mood)                         }
                         }
