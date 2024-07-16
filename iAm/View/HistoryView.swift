@@ -10,6 +10,7 @@ import SwiftData
 
 struct HistoryView: View {
     @Environment(\.modelContext) private var context
+    @Environment(\.colorScheme) private var colorScheme
     @Query(sort: \Note.timestamp, order: .reverse) private var notes: [Note]
     
     var body: some View {
@@ -42,22 +43,33 @@ struct HistoryView: View {
                                 }
                                 .frame(maxHeight: .infinity)
                                 .padding(10)
-                                .background()
+                                .background{
+                                    if colorScheme == .dark {
+                                        Color(uiColor: .secondarySystemBackground)
+                                    } else {
+                                        Color(uiColor: .systemBackground)
+                                    }
+                                }
                                 .cornerRadius(10)
                                 .shadow(radius: 4)
-                                .foregroundColor(.black)
+                                .foregroundColor(.primary)
                             }
-                            
                         }
                     }
                     .frame(maxHeight: 150)
                     .padding(.trailing, 16)
-                    
                 }
             }
             .padding(.top, 5)
         }
         .padding(.leading, 0)
+        .background{
+            if colorScheme == .dark {
+                Color(uiColor: .systemBackground)
+            } else {
+                Color(uiColor: .secondarySystemBackground)
+            }
+        }
     }
     
     private func deleteNotes(offsets: IndexSet) {
@@ -75,3 +87,4 @@ struct HistoryView: View {
     }
     .modelContainer(SampleData.shared.modelContainer)
 }
+

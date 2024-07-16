@@ -17,8 +17,6 @@ struct ContentView: View {
                 Text("iAm")
                     .font(.system(size: 34, weight: .bold))
                     .padding(.trailing, 290)
-
-           
             HistoryView()
             .navigationDestination(for: Destination.self) { destination in
                 switch destination {
