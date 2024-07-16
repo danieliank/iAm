@@ -9,53 +9,38 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var context
-    
-    @State var moodValue: Mood = .neutral
     @StateObject var navPath = Router.shared
+    @State var showSheet = false
     
     var body: some View {
         NavigationStack(path: $navPath.path) {
-            ScrollView(.vertical) {
-                VStack {
-                    TabView(selection: $moodValue) {
-                        ForEach(Mood.allCases, id: \.self) { mood in
-                            VStack {
-                                Image(mood.image)
-                                    .resizable()
-                                    .frame(width: 200, height: 200)
-                                Text(mood.title)
-                                .tag(mood)                         }
-                        }
-                    }
-                    .padding(.bottom, -40)
-                    .tabViewStyle(.page(indexDisplayMode: .always))
-                    .indexViewStyle(.page(backgroundDisplayMode: .always))
-                    Button {
-                        let newNote = Note(mood: moodValue, content: "", timestamp: Date())
-                        context.insert(newNote)
-                        
-                        Router.shared.path.append(.noteView(note: newNote))
-                    } label: {
-                        Text("Log")
-                            .padding(.vertical, 12)
-                            .padding(.horizontal, 20)
-                            .foregroundColor(.white)
-                            .background(.black)
-                    }
-                }
-                .frame(height: UIScreen.main.bounds.height)
-                
-                HistoryView()
-            }
+                Text("iAm")
+                    .font(.system(size: 34, weight: .bold))
+                    .padding(.trailing, 290)
+
+           
+            HistoryView()
             .navigationDestination(for: Destination.self) { destination in
                 switch destination {
                 case .noteView(let note):
                     NoteView(note: note)
                 }
             }
-            .ignoresSafeArea()
+
+            .toolbar {
+                ToolbarItemGroup {
+                    Button("Add", systemImage: "plus.circle.fill") {
+                        showSheet = true
+                    }
+                }
+            }
+            .sheet(isPresented: $showSheet, content: {
+                StateOfMindView(showSheet: $showSheet)
+                    .presentationDragIndicator(.visible)
+                    .presentationCornerRadius(10)
+            })
         }
+        .ignoresSafeArea(.all)
     }
 }
 

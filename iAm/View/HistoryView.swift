@@ -13,31 +13,51 @@ struct HistoryView: View {
     @Query(sort: \Note.timestamp, order: .reverse) private var notes: [Note]
     
     var body: some View {
-        List {
-            ForEach (notes) { note in
-                NavigationLink {
-                    NoteView(note: note)
-                } label: {
-                    HStack {
-                        Image(note.mood.image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 40)
+        ScrollView {
+            VStack {
+                ForEach (notes) { note in
+                    HStack(spacing: 12) {
+                        UnevenRoundedRectangle(bottomTrailingRadius: 10, topTrailingRadius: 10)
+                            .fill(note.mood.color)
+                            .frame(width: 7)
                         VStack {
-                            Text(note.timestamp, format: Date.FormatStyle()
-                                .month(.abbreviated)
-                                .day(.defaultDigits))
-                            Text(note.timestamp, format: Date.FormatStyle()
-                                    .hour(.twoDigits(amPM: .omitted))
-                                    .minute(.twoDigits))
+                            NavigationLink {
+                                NoteView(note: note)
+                            } label: {
+                                HStack {
+                                    if let photoData = note.noteImage, let uiImage = UIImage(data: photoData) {
+                                        Image(uiImage: uiImage)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 130, height: 130)
+                                            .clipShape(RoundedRectangle(cornerRadius: 6))
+                                    }
+                                    VStack(alignment: .leading) {
+                                        Text(note.content)
+                                            .multilineTextAlignment(.leading)
+                                        Spacer()
+                                        Divider()
+                                        Text("Friday, 12 July • 11.53")
+                                    }
+                                }
+                                .frame(maxHeight: .infinity)
+                                .padding(10)
+                                .background()
+                                .cornerRadius(10)
+                                .shadow(radius: 10)
+                                .foregroundColor(.black)
+                            }
+                            
                         }
                     }
+                    .frame(maxHeight: 150)
+                    .padding(.trailing, 16)
+                    
                 }
             }
-            .onDelete(perform: deleteNotes)
-            
+            .padding(.top, 5)
         }
-        .frame(height: UIScreen.main.bounds.height)
+        .padding(.leading, 0)
     }
     
     private func deleteNotes(offsets: IndexSet) {
@@ -50,6 +70,8 @@ struct HistoryView: View {
 }
 
 #Preview {
-    
-    HistoryView()
+    NavigationStack {
+        HistoryView()
+    }
+    .modelContainer(SampleData.shared.modelContainer)
 }
