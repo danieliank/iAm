@@ -65,7 +65,7 @@ enum Mood: Codable, CaseIterable {
         case .unpleasant:
             return ["What made you feel this way? Tell us what happened!", "So, for how long have you felt unpleasant?", "Is there something that might help improve your mood?"]
         case .slightlyUnpleasant:
-            return ["What's causing this slight discomfort?", "Is there anything that could alleviate this feeling?", "What are you going to do to endure this feeling?"]
+            return ["So, what's causing this slight discomfort?", "Is there anything that could alleviate this feeling?", "What are you going to do to endure this feeling?"]
         case .neutral:
             return ["What's on your mind? Do you still have things lingering?", "Do you feel balanced today? What made you feel neutral?", "Is there something that could make your day better?"]
         case .slightlyPleasant:

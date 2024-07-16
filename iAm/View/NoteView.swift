@@ -27,7 +27,8 @@ struct NoteView: View {
                     .frame(maxWidth: .infinity, maxHeight: 300)
             }
             
-            TextField("note", text: $note.content)
+            TextField("note", text: $note.content, axis: .vertical)
+                .frame(width: 370)
         }
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
