@@ -44,7 +44,7 @@ struct HistoryView: View {
                                 .padding(10)
                                 .background()
                                 .cornerRadius(10)
-                                .shadow(radius: 10)
+                                .shadow(radius: 4)
                                 .foregroundColor(.black)
                             }
                             
