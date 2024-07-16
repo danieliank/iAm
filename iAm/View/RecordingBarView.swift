@@ -14,10 +14,14 @@ struct RecordingBarView: View {
                 .stroke()
                 .frame(width: 353, height: 95)
                 .foregroundStyle(.mint)
-            Image(systemName: "play.fill")
-                .resizable()
-                .frame(width: 30, height: 35)
-                .foregroundStyle(.mint)
+            VStack {
+                Image(systemName: "play.fill")
+                                .resizable()
+                                .frame(width: 30, height: 35)
+                                .foregroundStyle(.mint)
+
+            }
+            
         }
         
     }

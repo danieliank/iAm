@@ -12,8 +12,13 @@ struct JournalView: View {
     @State private var isRecorderToggled: Bool = false
     @State private var micIcon: String = "mic"
     
+    @ObservedObject var vm = VoiceViewModel()
+    
     var body: some View {
         NavigationStack {
+            //this is not final
+           RecordingListView()
+            //until here
             Text("") //to be replaced by the Journal Content
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
@@ -21,7 +26,7 @@ struct JournalView: View {
                             Image(systemName: "chevron.left").fontWeight(.medium)
                             Text("Notes")
                         })
-                        .foregroundStyle(.mint)
+                        .foregroundStyle(.blue)
                     }
                     ToolbarItem (placement: .principal) {
                         Text("MON 8 · 11.53").fontWeight(.medium)
@@ -30,19 +35,19 @@ struct JournalView: View {
                         Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                             Image(systemName: "ellipsis.circle").fontWeight(.medium)
                         })
-                        .foregroundStyle(.mint)
+                        .foregroundStyle(.blue)
                     }
                     
                     ToolbarItem(placement: .bottomBar) {
                         HStack {
                             Button(action: {}, label: {
                                 Image(systemName: "checklist")
-                                    .foregroundStyle(.mint)
+                                    .foregroundStyle(.blue)
                             })
                             Spacer()
                             Button(action: {}, label: {
                                 Image(systemName: "camera")
-                                    .foregroundStyle(.mint)
+                                    .foregroundStyle(.blue)
                             })
                             Spacer()
                             Button(action: {
@@ -53,12 +58,12 @@ struct JournalView: View {
                                 micIcon = isRecorderToggled ? "mic.fill" : "mic"
                             }, label: {
                                 Image(systemName: micIcon)
-                                    .foregroundStyle(.mint)
+                                    .foregroundStyle(.blue)
                             })
                             Spacer()
                             Button(action: {}, label: {
                                 Image(systemName: "bubble")
-                                    .foregroundStyle(.mint)
+                                    .foregroundStyle(.blue)
                             })
                         }
                         .background(
