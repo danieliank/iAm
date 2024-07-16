@@ -13,18 +13,22 @@ import PhotosUI
 struct NoteView: View {
     @Bindable var note: Note
     @State var selectedPhoto: PhotosPickerItem?
-    //    @State private var photoData: Data?
     
     var body: some View {
         VStack {
+            
+            //Selected StateOfMind
+            StateOfMindHeader(selectedStateOfMind: note.mood)
+            
             if let photoData = note.noteImage, let uiImage = UIImage(data: photoData) {
                 Image(uiImage: uiImage)
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: .infinity, maxHeight: 300)
             }
-            TextField("note", text: $note.content)
-            Spacer()
+            
+            TextField("note", text: $note.content, axis: .vertical)
+                .frame(width: 370)
         }
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
@@ -46,12 +50,10 @@ struct NoteView: View {
                 Button(action: {}, label: {
                     Image(systemName: "mic")
                 })
-                Spacer()
-                Button(action: {}, label: {
-                    Image(systemName: "bubble")
-                })
             }
         }
+        
+        Spacer()
     }
 }
 
