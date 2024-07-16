@@ -26,6 +26,9 @@ struct NoteView: View {
                     .scaledToFit()
                     .frame(maxWidth: .infinity, maxHeight: 300)
             }
+            
+            
+            
             TextField("note", text: $note.content)
             Spacer()
         }
