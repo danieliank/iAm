@@ -10,15 +10,12 @@ import SwiftUI
 struct StateOfMindHeader: View {
     var selectedStateOfMind: Mood
     @State private var currentIndex = 0
-    @State private var fadeIn = true
-    @State private var imageOpacity = 1.0
 
     var body: some View {
         HStack(spacing: 15) {
             Image(selectedStateOfMind.image)
                 .resizable()
                 .frame(width: 80, height: 80)
-                .opacity(imageOpacity)
 
             VStack {
                 HStack {
@@ -31,27 +28,29 @@ struct StateOfMindHeader: View {
 
                     Image(systemName: "arrow.clockwise")
                         .font(.caption)
-                        .fontWeight(.bold)
+                        .fontWeight(.semibold)
                         .padding(.top, 8)
                         .padding(.trailing, 10)
                         .onTapGesture {
-                            withAnimation {
                                 currentIndex = (currentIndex + 1) % selectedStateOfMind.prompt.count
-                            }
                         }
                 }
+                .padding(.bottom,10)
 
-                Text(selectedStateOfMind.prompt[currentIndex])
-                    .font(.headline)
-                    .animation(.easeInOut)
+                HStack {
+                    Text(selectedStateOfMind.prompt[currentIndex])
+                        .font(.headline)
+                }
+                .padding(.bottom,10)
+
                 
             }
+            .background(.white)
             .cornerRadius(10)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray, lineWidth: 1)
-            )
+            .shadow(color: .black.opacity(0.2), radius: 4)
             .frame(width: 260, height: 100)
+            
+            
         }
         .padding()
     }

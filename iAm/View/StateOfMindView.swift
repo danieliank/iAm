@@ -32,6 +32,7 @@ struct StateOfMindView: View {
             } .frame(width: .infinity, height: 450)
             
                 .tabViewStyle(.page(indexDisplayMode: .never))
+                
             
             Button {
                 let newNote = Note(mood: moodValue, content: "", timestamp: Date())

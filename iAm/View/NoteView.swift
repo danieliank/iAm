@@ -27,10 +27,7 @@ struct NoteView: View {
                     .frame(maxWidth: .infinity, maxHeight: 300)
             }
             
-            
-            
             TextField("note", text: $note.content)
-            Spacer()
         }
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
@@ -54,6 +51,8 @@ struct NoteView: View {
                 })
             }
         }
+        
+        Spacer()
     }
 }
 
