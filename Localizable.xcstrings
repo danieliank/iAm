@@ -1,8 +1,15 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    " . " : {
-
+    "" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Add" : {
       "localizations" : {
@@ -14,12 +21,63 @@
         }
       }
     },
+    "Add New Note" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menambah Note Baru"
+          }
+        }
+      }
+    },
+    "Configuration" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konfigurasi"
+          }
+        }
+      }
+    },
     "content" : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "konten"
+          }
+        }
+      }
+    },
+    "Edit Note" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Note"
+          }
+        }
+      }
+    },
+    "Favorite Emoji" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emoji Favorit"
+          }
+        }
+      }
+    },
+    "How did your emotion change?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana emosi anda berubah?"
           }
         }
       }
@@ -49,13 +107,30 @@
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Masukan Emosi"
+            "value" : "Catat Emosi"
           }
         }
       }
     },
     "MON 8 · 11.53" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SEN 8 · 11.53"
+          }
+        }
+      }
+    },
+    "Mood" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emosi"
+          }
+        }
+      }
     },
     "New Note" : {
       "localizations" : {
@@ -67,11 +142,22 @@
         }
       }
     },
-    "note" : {
+    "No Entry" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "No Entry"
+          }
+        }
+      }
+    },
+    "note" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "note"
           }
         }
@@ -92,7 +178,37 @@
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "REFLECT"
+            "value" : "REFLEKSI"
+          }
+        }
+      }
+    },
+    "Start adding notes to see your list." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mulai dengan menambah notes untuk melihat list."
+          }
+        }
+      }
+    },
+    "This is an example widget." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ini adalah contoh widget."
+          }
+        }
+      }
+    },
+    "Update" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update"
           }
         }
       }
