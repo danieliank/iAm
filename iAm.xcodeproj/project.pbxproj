@@ -25,7 +25,40 @@
 		CD2555932C3F8051002702A8 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2555922C3F8051002702A8 /* NoteView.swift */; };
 		CD2555952C3F80AA002702A8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2555942C3F80AA002702A8 /* Router.swift */; };
 		CD2555DC2C451BF9002702A8 /* StateOfMindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2555DB2C451BF9002702A8 /* StateOfMindView.swift */; };
+		CD9285C52C47A0F8006F1E11 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD92851D2C475FE9006F1E11 /* WidgetKit.framework */; };
+		CD9285C62C47A0F8006F1E11 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD92851F2C475FE9006F1E11 /* SwiftUI.framework */; };
+		CD9285C92C47A0F8006F1E11 /* iAmWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9285C82C47A0F8006F1E11 /* iAmWidgetBundle.swift */; };
+		CD9285CB2C47A0F8006F1E11 /* iAmWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9285CA2C47A0F8006F1E11 /* iAmWidget.swift */; };
+		CD9285CD2C47A0F9006F1E11 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9285CC2C47A0F9006F1E11 /* AppIntent.swift */; };
+		CD9285CF2C47A0FA006F1E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9285CE2C47A0FA006F1E11 /* Assets.xcassets */; };
+		CD9285D32C47A0FA006F1E11 /* iAmWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CD9285C42C47A0F8006F1E11 /* iAmWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CD9285D72C47A120006F1E11 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD25558B2C3F7A15002702A8 /* Note.swift */; };
+		CD9285D82C47A125006F1E11 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD25558E2C3F7A5B002702A8 /* Enums.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD9285D12C47A0FA006F1E11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AC0273C2C3CD2CB0052CBFD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD9285C32C47A0F8006F1E11;
+			remoteInfo = iAmWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CD9285332C475FEB006F1E11 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CD9285D32C47A0FA006F1E11 /* iAmWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2FD3DFA82C450F3B00207E85 /* StateOfMindHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateOfMindHeader.swift; sourceTree = "<group>"; };
@@ -46,6 +79,16 @@
 		CD2555922C3F8051002702A8 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		CD2555942C3F80AA002702A8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CD2555DB2C451BF9002702A8 /* StateOfMindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateOfMindView.swift; sourceTree = "<group>"; };
+		CD9285162C475FA0006F1E11 /* iAm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iAm.entitlements; sourceTree = "<group>"; };
+		CD92851D2C475FE9006F1E11 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		CD92851F2C475FE9006F1E11 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		CD9285342C475FF4006F1E11 /* iAmWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iAmWidgetExtension.entitlements; sourceTree = "<group>"; };
+		CD9285C42C47A0F8006F1E11 /* iAmWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iAmWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD9285C82C47A0F8006F1E11 /* iAmWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAmWidgetBundle.swift; sourceTree = "<group>"; };
+		CD9285CA2C47A0F8006F1E11 /* iAmWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAmWidget.swift; sourceTree = "<group>"; };
+		CD9285CC2C47A0F9006F1E11 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		CD9285CE2C47A0FA006F1E11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD9285D02C47A0FA006F1E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +97,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A81EE8A2C46674600D307F9 /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD9285C12C47A0F8006F1E11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD9285C62C47A0F8006F1E11 /* SwiftUI.framework in Frameworks */,
+				CD9285C52C47A0F8006F1E11 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +123,10 @@
 		6AC0273B2C3CD2CB0052CBFD = {
 			isa = PBXGroup;
 			children = (
+				CD9285342C475FF4006F1E11 /* iAmWidgetExtension.entitlements */,
 				6AC027462C3CD2CB0052CBFD /* iAm */,
+				CD9285C72C47A0F8006F1E11 /* iAmWidget */,
+				CD92851C2C475FE9006F1E11 /* Frameworks */,
 				6AC027452C3CD2CB0052CBFD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				6AC027442C3CD2CB0052CBFD /* iAm.app */,
+				CD9285C42C47A0F8006F1E11 /* iAmWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +143,7 @@
 		6AC027462C3CD2CB0052CBFD /* iAm */ = {
 			isa = PBXGroup;
 			children = (
+				CD9285162C475FA0006F1E11 /* iAm.entitlements */,
 				CD25558D2C3F7A3A002702A8 /* Helper */,
 				9604EE212C3D70FB0088D47C /* Model */,
 				9604EE202C3D70F20088D47C /* View Model */,
@@ -156,6 +213,27 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		CD92851C2C475FE9006F1E11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD92851D2C475FE9006F1E11 /* WidgetKit.framework */,
+				CD92851F2C475FE9006F1E11 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD9285C72C47A0F8006F1E11 /* iAmWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CD9285C82C47A0F8006F1E11 /* iAmWidgetBundle.swift */,
+				CD9285CA2C47A0F8006F1E11 /* iAmWidget.swift */,
+				CD9285CC2C47A0F9006F1E11 /* AppIntent.swift */,
+				CD9285CE2C47A0FA006F1E11 /* Assets.xcassets */,
+				CD9285D02C47A0FA006F1E11 /* Info.plist */,
+			);
+			path = iAmWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,10 +244,12 @@
 				6AC027402C3CD2CB0052CBFD /* Sources */,
 				6AC027412C3CD2CB0052CBFD /* Frameworks */,
 				6AC027422C3CD2CB0052CBFD /* Resources */,
+				CD9285332C475FEB006F1E11 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CD9285D22C47A0FA006F1E11 /* PBXTargetDependency */,
 			);
 			name = iAm;
 			packageProductDependencies = (
@@ -179,6 +259,23 @@
 			productReference = 6AC027442C3CD2CB0052CBFD /* iAm.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CD9285C32C47A0F8006F1E11 /* iAmWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD9285D42C47A0FA006F1E11 /* Build configuration list for PBXNativeTarget "iAmWidgetExtension" */;
+			buildPhases = (
+				CD9285C02C47A0F8006F1E11 /* Sources */,
+				CD9285C12C47A0F8006F1E11 /* Frameworks */,
+				CD9285C22C47A0F8006F1E11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iAmWidgetExtension;
+			productName = iAmWidgetExtension;
+			productReference = CD9285C42C47A0F8006F1E11 /* iAmWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -186,11 +283,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					6AC027432C3CD2CB0052CBFD = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					CD9285C32C47A0F8006F1E11 = {
+						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
@@ -211,6 +311,7 @@
 			projectRoot = "";
 			targets = (
 				6AC027432C3CD2CB0052CBFD /* iAm */,
+				CD9285C32C47A0F8006F1E11 /* iAmWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -222,6 +323,14 @@
 			files = (
 				6AC027512C3CD2CC0052CBFD /* Preview Assets.xcassets in Resources */,
 				6AC0274E2C3CD2CC0052CBFD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD9285C22C47A0F8006F1E11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD9285CF2C47A0FA006F1E11 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +359,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CD9285C02C47A0F8006F1E11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD9285C92C47A0F8006F1E11 /* iAmWidgetBundle.swift in Sources */,
+				CD9285CB2C47A0F8006F1E11 /* iAmWidget.swift in Sources */,
+				CD9285D82C47A125006F1E11 /* Enums.swift in Sources */,
+				CD9285CD2C47A0F9006F1E11 /* AppIntent.swift in Sources */,
+				CD9285D72C47A120006F1E11 /* Note.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD9285D22C47A0FA006F1E11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD9285C32C47A0F8006F1E11 /* iAmWidgetExtension */;
+			targetProxy = CD9285D12C47A0FA006F1E11 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6AC027522C3CD2CC0052CBFD /* Debug */ = {
@@ -375,12 +504,14 @@
 		6AC027552C3CD2CC0052CBFD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iAm/iAm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iAm/Preview Content\"";
-				DEVELOPMENT_TEAM = 84CY6V3X8V;
+				DEVELOPMENT_TEAM = B4MA3ZSJ87;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -405,12 +536,14 @@
 		6AC027562C3CD2CC0052CBFD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iAm/iAm.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iAm/Preview Content\"";
-				DEVELOPMENT_TEAM = 84CY6V3X8V;
+				DEVELOPMENT_TEAM = B4MA3ZSJ87;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -426,6 +559,62 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.learn.iAm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD9285D52C47A0FA006F1E11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = iAmWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B4MA3ZSJ87;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iAmWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iAmWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.learn.iAm.iAmWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD9285D62C47A0FA006F1E11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = iAmWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B4MA3ZSJ87;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iAmWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iAmWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.learn.iAm.iAmWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -449,6 +638,15 @@
 			buildConfigurations = (
 				6AC027552C3CD2CC0052CBFD /* Debug */,
 				6AC027562C3CD2CC0052CBFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD9285D42C47A0FA006F1E11 /* Build configuration list for PBXNativeTarget "iAmWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD9285D52C47A0FA006F1E11 /* Debug */,
+				CD9285D62C47A0FA006F1E11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
