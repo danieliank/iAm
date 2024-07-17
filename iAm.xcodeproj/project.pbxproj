@@ -149,11 +149,10 @@
 		6AC027462C3CD2CB0052CBFD /* iAm */ = {
 			isa = PBXGroup;
 			children = (
-				9684089D2C4071A90099EBEE /* AudioManager */,
 				CD9285162C475FA0006F1E11 /* iAm.entitlements */,
 				CD25558D2C3F7A3A002702A8 /* Helper */,
 				9604EE212C3D70FB0088D47C /* Model */,
-				9604EE202C3D70F20088D47C /* View Model */,
+				9604EE202C3D70F20088D47C /* ViewModel */,
 				9604EE1F2C3D70E90088D47C /* View */,
 				6AC027472C3CD2CB0052CBFD /* iAmApp.swift */,
 				6AC0274D2C3CD2CC0052CBFD /* Assets.xcassets */,
@@ -186,11 +185,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		9604EE202C3D70F20088D47C /* View Model */ = {
+		9604EE202C3D70F20088D47C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				968408A52C442F760099EBEE /* AudioManager.swift */,
 			);
-			path = "View Model";
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		9604EE212C3D70FB0088D47C /* Model */ = {
@@ -209,18 +209,10 @@
 			path = ToolbarView;
 			sourceTree = "<group>";
 		};
-		9684089D2C4071A90099EBEE /* AudioManager */ = {
-			isa = PBXGroup;
-			children = (
-				968408A32C40EB960099EBEE /* Extensions.swift */,
-				968408A52C442F760099EBEE /* AudioManager.swift */,
-			);
-			path = AudioManager;
-			sourceTree = "<group>";
-		};
 		CD25558D2C3F7A3A002702A8 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				968408A32C40EB960099EBEE /* Extensions.swift */,
 				CD25558E2C3F7A5B002702A8 /* Enums.swift */,
 				CD2555902C3F7B38002702A8 /* SampleData.swift */,
 				CD2555942C3F80AA002702A8 /* Router.swift */,
@@ -530,7 +522,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iAm/Preview Content\"";
-				DEVELOPMENT_TEAM = 5T75SV584X;
+				DEVELOPMENT_TEAM = B4MA3ZSJ87;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "OPEN UP YO MIC BOI";
@@ -563,7 +555,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iAm/Preview Content\"";
-				DEVELOPMENT_TEAM = 5T75SV584X;
+				DEVELOPMENT_TEAM = B4MA3ZSJ87;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "OPEN UP YO MIC BOI";
@@ -594,7 +586,7 @@
 				CODE_SIGN_ENTITLEMENTS = iAmWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 84CY6V3X8V;
+				DEVELOPMENT_TEAM = B4MA3ZSJ87;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iAmWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = iAmWidget;
@@ -622,7 +614,7 @@
 				CODE_SIGN_ENTITLEMENTS = iAmWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 84CY6V3X8V;
+				DEVELOPMENT_TEAM = B4MA3ZSJ87;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iAmWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = iAmWidget;

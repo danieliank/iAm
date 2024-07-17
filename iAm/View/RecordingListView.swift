@@ -19,50 +19,47 @@ struct RecordingListView: View {
     )
     var note: Note
     var body: some View {
-        NavigationView {
-            VStack {
-                ScrollView(showsIndicators: false){
-                    ForEach(vm.recordingsList, id: \.createdAt) { recording in
-                        ZStack {
-                            RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-                                .stroke()
-                                .frame(width: 361, height: 97)
-                            
-                            VStack{
-                                HStack{
+        VStack {
+            ScrollView(showsIndicators: false){
+                ForEach(vm.recordingsList, id: \.createdAt) { recording in
+                    ZStack {
+                        RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
+                            .stroke()
+                            .frame(width: 361, height: 97)
+                        
+                        VStack{
+                            HStack{
+                                Button(action: {
+                                    if recording.isPlaying == true {
+                                        vm.stopPlaying(url: recording.fileURL)
+                                    }else{
+                                        vm.startPlaying(url: recording.fileURL)
+                                    }
+                                }) {
+                                    Image(systemName: recording.isPlaying ? "stop.fill" : "play.fill")
+                                        .foregroundColor(.blue)
+                                        .font(.system(size:30))
+                                }
+                                WaveformView(audioURL: recording.fileURL, configuration: configuration)
+                                    .padding(20)
+                                VStack {
                                     Button(action: {
-                                        if recording.isPlaying == true {
-                                            vm.stopPlaying(url: recording.fileURL)
-                                        }else{
-                                            vm.startPlaying(url: recording.fileURL)
-                                        }
+                                        vm.deleteRecording(url:recording.fileURL, note: note)
                                     }) {
-                                        Image(systemName: recording.isPlaying ? "stop.fill" : "play.fill")
-                                            .foregroundColor(.blue)
-                                            .font(.system(size:30))
+                                        Image(systemName:"xmark.circle.fill")
+                                            .foregroundColor(.gray)
+                                            .font(.system(size:15))
+                                            .offset(x: 14, y: 5)
                                     }
-                                    WaveformView(audioURL: recording.fileURL, configuration: configuration)
-                                        .padding(20)
-                                    VStack {
-                                        Button(action: {
-                                            vm.deleteRecording(url:recording.fileURL, note: note)
-                                            vm.fetchAllRecording(audioURLs: note.audioFileName)
-                                        }) {
-                                            Image(systemName:"xmark.circle.fill")
-                                                .foregroundColor(.gray)
-                                                .font(.system(size:15))
-                                                .offset(x: 14, y: 5)
-                                        }
-                                        Spacer()
-                                    }
-                                    
-                                }.padding(.horizontal, 35)                                }
-                        }
-                        .padding(.top, 10)
+                                    Spacer()
+                                }
+                                
+                            }.padding(.horizontal, 35)                                }
                     }
+                    .padding(.top, 10)
                 }
-                
             }
+            
         }
     }
 }

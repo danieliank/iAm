@@ -20,8 +20,6 @@ class VoiceViewModel : NSObject , ObservableObject , AVAudioPlayerDelegate {
     
     override init(){
         super.init()
-        
-        
     }
     
     
@@ -145,6 +143,8 @@ class VoiceViewModel : NSObject , ObservableObject , AVAudioPlayerDelegate {
             }
             
         }
+        
+        fetchAllRecording(audioURLs: note.audioFileName)
     }
     
     func getFileDate(for file: URL) -> Date {

@@ -37,10 +37,14 @@ struct NoteView: View {
                     .frame(maxWidth: .infinity, maxHeight: 300)
             }
             
+            VStack {
+                
+            }
             TextEditor(text: $note.content)
             .scrollContentBackground(.hidden)
             .padding(.horizontal)
             .background(Color(uiColor: .secondarySystemBackground))
+            RecordingListView(vm: vm, note: note)
         }
         .onAppear {
             vm.fetchAllRecording(audioURLs: note.audioFileName)

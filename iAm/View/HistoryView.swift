@@ -47,7 +47,6 @@ struct HistoryView: View {
                             .background(Color(uiColor: .systemBackground))
                             .cornerRadius(10)
                             .shadow(radius: 10)
-                            .foregroundColor(.black)
                         }
                         
                     }

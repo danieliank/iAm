@@ -40,7 +40,7 @@ struct StateOfMindView: View {
                             Text(mood.title)
                             .font(.system(size: 30, weight: .bold))}
                     }
-                } .frame(width: .infinity, height: 450)
+                } .frame(height: 450)
                     .tabViewStyle(.page(indexDisplayMode: .never))
                 
                 HStack{
