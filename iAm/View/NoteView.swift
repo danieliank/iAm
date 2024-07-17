@@ -11,14 +11,17 @@ import SwiftData
 import PhotosUI
 
 struct NoteView: View {
+    @Environment(\.colorScheme) private var colorScheme
     @Bindable var note: Note
     @State var selectedPhoto: PhotosPickerItem?
+    @State var showSheet: Bool = false
+    @State var updatedMood: Mood = .neutral // hny untk receive update la
     
     var body: some View {
         VStack {
             
             //Selected StateOfMind
-            StateOfMindHeader(selectedStateOfMind: note.mood)
+            StateOfMindHeader(selectedStateOfMind: note.mood, showSheet: $showSheet)
             
             if let photoData = note.noteImage, let uiImage = UIImage(data: photoData) {
                 Image(uiImage: uiImage)
@@ -30,6 +33,7 @@ struct NoteView: View {
             TextField("note", text: $note.content, axis: .vertical)
                 .frame(width: 370)
         }
+        .background(Color(uiColor: .secondarySystemBackground))
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
                 Button(action: {}, label: {
@@ -52,8 +56,16 @@ struct NoteView: View {
                 })
             }
         }
-        
+        .sheet(isPresented: $showSheet){
+            StateOfMindView(moodValue: note.mood, isEditing: true, updatedMoodValue: $updatedMood, onUpdate: updateMood)
+                .presentationDragIndicator(.visible)
+                .presentationCornerRadius(10)
+        }
         Spacer()
+    }
+    
+    func updateMood() -> Void {
+        note.mood = updatedMood
     }
 }
 
