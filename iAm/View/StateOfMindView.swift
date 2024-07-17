@@ -10,10 +10,10 @@ import SwiftUI
 struct StateOfMindView: View {
     
     @State var moodValue: Mood
-        @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
     
-//    @Binding var showSheet: Bool
+    //    @Binding var showSheet: Bool
     @State var isEditing: Bool
     var updatedMoodValue: Binding<Mood>?
     var onUpdate: () -> Void = {}
@@ -30,34 +30,79 @@ struct StateOfMindView: View {
                 .font(.headline)
                 .padding(.top, -10)
             
-            TabView(selection: $moodValue) {
-                ForEach(Mood.allCases, id: \.self) { mood in
-                    VStack {
-                        Image(mood.image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 240)
-                            .padding(.bottom, 40)
+            ZStack{
+                
+                TabView(selection: $moodValue) {
+                    ForEach(Mood.allCases, id: \.self) { mood in
+                        VStack {
+                            Image(mood.image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 240)
+                                .padding(.bottom, 40)
+                            
+                            Text(mood.title)
+                            .font(.system(size: 30, weight: .bold))}
+                    }
+                } .frame(width: .infinity, height: 450)
+                    .tabViewStyle(.page(indexDisplayMode: .never))
+                
+                HStack{
+                    
+                    if !(moodValue == .unpleasant) {
                         
-                        Text(mood.title)
-                        .font(.system(size: 30, weight: .bold))}
+                        //button chevron left
+                        Button(action: {
+                            if let currentIndex = Mood.allCases.firstIndex(of: moodValue) {
+                                let newIndex = (currentIndex - 1 + Mood.allCases.count) % Mood.allCases.count
+                                moodValue = Mood.allCases[newIndex]
+                            }
+                        }) {
+                            Image(systemName: "chevron.left")
+                                .imageScale(.large)
+                                .padding(.horizontal)
+                        }
+                    }
+                    Spacer()
+                    
+                    if !(moodValue == .pleasant) {
+                        // button chevron right
+                        Button(action: {
+                            if let currentIndex = Mood.allCases.firstIndex(of: moodValue) {
+                                let newIndex = (currentIndex + 1) % Mood.allCases.count
+                                moodValue = Mood.allCases[newIndex]
+                            }
+                        }) {
+                            Image(systemName: "chevron.right")
+                                .imageScale(.large)
+                                .padding(.horizontal)
+                        }
+                    }
                 }
-            } .frame(width: .infinity, height: 450)
-                .tabViewStyle(.page(indexDisplayMode: .always))
+                
+                
+            }
+            
+            
+            
+            
+            
+            
+            
             
             Button {
                 
                 if (isEditing) {
-                   
+                    
                     if let updatedMoodValue = updatedMoodValue {
                         updatedMoodValue.wrappedValue = moodValue
                     }
-//                    updatedMoodValue = moodValue
+                    //                    updatedMoodValue = moodValue
                     onUpdate() // note.mood = updatedMood
                     dismiss()
                     
                     // flow: note.mood = (updatedMood or updatedMoodValue) = moodValue
-                 //   showSheet = false
+                    //   showSheet = false
                     
                 }
                 
@@ -67,9 +112,9 @@ struct StateOfMindView: View {
                     context.insert(newNote)
                     
                     Router.shared.path.append(.noteView(note: newNote))
-                                    dismiss()
+                    dismiss()
                     //            showSheet.toggle()
-                  //  showSheet = false
+                    //  showSheet = false
                     
                 }
                 
@@ -90,6 +135,6 @@ struct StateOfMindView: View {
     }
 }
 
-//#Preview {
-//    StateOfMindView(moodValue: .pleasant, showSheet: .constant(true), isEditing: false, updatedMoodValue: <#Binding<Mood?>#>)
-//}
+#Preview {
+    StateOfMindView(moodValue: .pleasant, isEditing: false, updatedMoodValue: nil)
+}
