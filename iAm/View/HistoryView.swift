@@ -51,6 +51,7 @@ struct HistoryView: View {
                                     }
                                 }
                                 .cornerRadius(10)
+                                .shadow(radius: 4)
                                 .foregroundColor(.primary)
                             }
                         }
