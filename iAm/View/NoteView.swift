@@ -49,8 +49,9 @@ struct NoteView: View {
         .onAppear {
             vm.fetchAllRecording(audioURLs: note.audioFileName)
         }
-        .navigationTitle("date")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(note.timestamp.formatted(Date.FormatStyle().weekday(.wide)
+                    .day(.twoDigits).month()
+                    ) + " · " + note.timestamp.formatted(Date.FormatStyle().hour().minute(.twoDigits)))        .navigationBarTitleDisplayMode(.inline)
         .background(Color(uiColor: .secondarySystemBackground))
         .navigationTitle(note.timestamp.formatted(Date.FormatStyle()
             .weekday(.abbreviated)

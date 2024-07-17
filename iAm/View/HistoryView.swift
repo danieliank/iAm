@@ -11,6 +11,8 @@ import SwiftData
 struct HistoryView: View {
     @Environment(\.modelContext) private var context
     @Query(sort: \Note.timestamp, order: .reverse) private var notes: [Note]
+    @State var showSheet: Bool = false
+    @State var moodValue: Mood = .neutral
     
     var body: some View {
         List {
@@ -61,6 +63,25 @@ struct HistoryView: View {
             .listRowBackground(Color.clear)
         }
         .listStyle(.plain)
+        .overlay {
+            if notes.isEmpty {
+                ContentUnavailableView(label: {
+                    Label ("No Entry", systemImage: "list.bullet.clipboard")
+                }, description: {
+                    Text("Start adding notes to see your list.")
+                }, actions: {
+                    Button("Add New Note") {
+                        showSheet = true
+                    }
+                })
+                .offset(y: -60)
+            }
+        }
+        .sheet(isPresented: $showSheet, content: {
+            StateOfMindView(moodValue: $moodValue, isEditing: false)
+                .presentationDragIndicator(.visible)
+                .presentationCornerRadius(10)
+        })
     }
     
     private func deleteNotes(offsets: IndexSet) {
