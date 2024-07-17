@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct StateOfMindView: View {
-    @State var moodValue: Mood = .neutral
     @Environment(\.modelContext) private var context
     
+    @Binding var moodValue: Mood
     @Binding var showSheet: Bool
     
     var body: some View {
@@ -62,5 +62,5 @@ struct StateOfMindView: View {
 }
 
 #Preview {
-    StateOfMindView(showSheet: .constant(true))
+    StateOfMindView(moodValue: .constant(.neutral), showSheet: .constant(true))
 }

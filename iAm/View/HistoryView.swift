@@ -63,13 +63,6 @@ struct HistoryView: View {
             .padding(.top, 5)
         }
         .padding(.leading, 0)
-        .background{
-            if colorScheme == .dark {
-                Color(uiColor: .systemBackground)
-            } else {
-                Color(uiColor: .secondarySystemBackground)
-            }
-        }
     }
     
     private func deleteNotes(offsets: IndexSet) {

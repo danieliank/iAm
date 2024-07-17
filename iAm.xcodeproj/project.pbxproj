@@ -25,22 +25,23 @@
 		CD2555932C3F8051002702A8 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2555922C3F8051002702A8 /* NoteView.swift */; };
 		CD2555952C3F80AA002702A8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2555942C3F80AA002702A8 /* Router.swift */; };
 		CD2555DC2C451BF9002702A8 /* StateOfMindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2555DB2C451BF9002702A8 /* StateOfMindView.swift */; };
-		CD9285992C4768D4006F1E11 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD92851D2C475FE9006F1E11 /* WidgetKit.framework */; };
-		CD92859A2C4768D4006F1E11 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD92851F2C475FE9006F1E11 /* SwiftUI.framework */; };
-		CD92859D2C4768D4006F1E11 /* iAmWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD92859C2C4768D4006F1E11 /* iAmWidgetBundle.swift */; };
-		CD92859F2C4768D4006F1E11 /* iAmWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD92859E2C4768D4006F1E11 /* iAmWidget.swift */; };
-		CD9285A12C4768D5006F1E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9285A02C4768D5006F1E11 /* Assets.xcassets */; };
-		CD9285A52C4768D5006F1E11 /* iAmWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CD9285982C4768D4006F1E11 /* iAmWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CD9285A92C476909006F1E11 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD25558E2C3F7A5B002702A8 /* Enums.swift */; };
-		CD9285AA2C47690B006F1E11 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD25558B2C3F7A15002702A8 /* Note.swift */; };
+		CD9285C52C47A0F8006F1E11 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD92851D2C475FE9006F1E11 /* WidgetKit.framework */; };
+		CD9285C62C47A0F8006F1E11 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD92851F2C475FE9006F1E11 /* SwiftUI.framework */; };
+		CD9285C92C47A0F8006F1E11 /* iAmWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9285C82C47A0F8006F1E11 /* iAmWidgetBundle.swift */; };
+		CD9285CB2C47A0F8006F1E11 /* iAmWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9285CA2C47A0F8006F1E11 /* iAmWidget.swift */; };
+		CD9285CD2C47A0F9006F1E11 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9285CC2C47A0F9006F1E11 /* AppIntent.swift */; };
+		CD9285CF2C47A0FA006F1E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9285CE2C47A0FA006F1E11 /* Assets.xcassets */; };
+		CD9285D32C47A0FA006F1E11 /* iAmWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CD9285C42C47A0F8006F1E11 /* iAmWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CD9285D72C47A120006F1E11 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD25558B2C3F7A15002702A8 /* Note.swift */; };
+		CD9285D82C47A125006F1E11 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD25558E2C3F7A5B002702A8 /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CD9285A32C4768D5006F1E11 /* PBXContainerItemProxy */ = {
+		CD9285D12C47A0FA006F1E11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6AC0273C2C3CD2CB0052CBFD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CD9285972C4768D4006F1E11;
+			remoteGlobalIDString = CD9285C32C47A0F8006F1E11;
 			remoteInfo = iAmWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
@@ -52,7 +53,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CD9285A52C4768D5006F1E11 /* iAmWidgetExtension.appex in Embed Foundation Extensions */,
+				CD9285D32C47A0FA006F1E11 /* iAmWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,11 +83,12 @@
 		CD92851D2C475FE9006F1E11 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CD92851F2C475FE9006F1E11 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CD9285342C475FF4006F1E11 /* iAmWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iAmWidgetExtension.entitlements; sourceTree = "<group>"; };
-		CD9285982C4768D4006F1E11 /* iAmWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iAmWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD92859C2C4768D4006F1E11 /* iAmWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAmWidgetBundle.swift; sourceTree = "<group>"; };
-		CD92859E2C4768D4006F1E11 /* iAmWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAmWidget.swift; sourceTree = "<group>"; };
-		CD9285A02C4768D5006F1E11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CD9285A22C4768D5006F1E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD9285C42C47A0F8006F1E11 /* iAmWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iAmWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD9285C82C47A0F8006F1E11 /* iAmWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAmWidgetBundle.swift; sourceTree = "<group>"; };
+		CD9285CA2C47A0F8006F1E11 /* iAmWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAmWidget.swift; sourceTree = "<group>"; };
+		CD9285CC2C47A0F9006F1E11 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		CD9285CE2C47A0FA006F1E11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD9285D02C47A0FA006F1E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +100,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD9285952C4768D4006F1E11 /* Frameworks */ = {
+		CD9285C12C47A0F8006F1E11 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD92859A2C4768D4006F1E11 /* SwiftUI.framework in Frameworks */,
-				CD9285992C4768D4006F1E11 /* WidgetKit.framework in Frameworks */,
+				CD9285C62C47A0F8006F1E11 /* SwiftUI.framework in Frameworks */,
+				CD9285C52C47A0F8006F1E11 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +125,7 @@
 			children = (
 				CD9285342C475FF4006F1E11 /* iAmWidgetExtension.entitlements */,
 				6AC027462C3CD2CB0052CBFD /* iAm */,
-				CD92859B2C4768D4006F1E11 /* iAmWidget */,
+				CD9285C72C47A0F8006F1E11 /* iAmWidget */,
 				CD92851C2C475FE9006F1E11 /* Frameworks */,
 				6AC027452C3CD2CB0052CBFD /* Products */,
 			);
@@ -133,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				6AC027442C3CD2CB0052CBFD /* iAm.app */,
-				CD9285982C4768D4006F1E11 /* iAmWidgetExtension.appex */,
+				CD9285C42C47A0F8006F1E11 /* iAmWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,13 +222,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CD92859B2C4768D4006F1E11 /* iAmWidget */ = {
+		CD9285C72C47A0F8006F1E11 /* iAmWidget */ = {
 			isa = PBXGroup;
 			children = (
-				CD92859C2C4768D4006F1E11 /* iAmWidgetBundle.swift */,
-				CD92859E2C4768D4006F1E11 /* iAmWidget.swift */,
-				CD9285A02C4768D5006F1E11 /* Assets.xcassets */,
-				CD9285A22C4768D5006F1E11 /* Info.plist */,
+				CD9285C82C47A0F8006F1E11 /* iAmWidgetBundle.swift */,
+				CD9285CA2C47A0F8006F1E11 /* iAmWidget.swift */,
+				CD9285CC2C47A0F9006F1E11 /* AppIntent.swift */,
+				CD9285CE2C47A0FA006F1E11 /* Assets.xcassets */,
+				CD9285D02C47A0FA006F1E11 /* Info.plist */,
 			);
 			path = iAmWidget;
 			sourceTree = "<group>";
@@ -246,7 +249,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CD9285A42C4768D5006F1E11 /* PBXTargetDependency */,
+				CD9285D22C47A0FA006F1E11 /* PBXTargetDependency */,
 			);
 			name = iAm;
 			packageProductDependencies = (
@@ -256,13 +259,13 @@
 			productReference = 6AC027442C3CD2CB0052CBFD /* iAm.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CD9285972C4768D4006F1E11 /* iAmWidgetExtension */ = {
+		CD9285C32C47A0F8006F1E11 /* iAmWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD9285A62C4768D5006F1E11 /* Build configuration list for PBXNativeTarget "iAmWidgetExtension" */;
+			buildConfigurationList = CD9285D42C47A0FA006F1E11 /* Build configuration list for PBXNativeTarget "iAmWidgetExtension" */;
 			buildPhases = (
-				CD9285942C4768D4006F1E11 /* Sources */,
-				CD9285952C4768D4006F1E11 /* Frameworks */,
-				CD9285962C4768D4006F1E11 /* Resources */,
+				CD9285C02C47A0F8006F1E11 /* Sources */,
+				CD9285C12C47A0F8006F1E11 /* Frameworks */,
+				CD9285C22C47A0F8006F1E11 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -270,7 +273,7 @@
 			);
 			name = iAmWidgetExtension;
 			productName = iAmWidgetExtension;
-			productReference = CD9285982C4768D4006F1E11 /* iAmWidgetExtension.appex */;
+			productReference = CD9285C42C47A0F8006F1E11 /* iAmWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -286,7 +289,7 @@
 					6AC027432C3CD2CB0052CBFD = {
 						CreatedOnToolsVersion = 15.4;
 					};
-					CD9285972C4768D4006F1E11 = {
+					CD9285C32C47A0F8006F1E11 = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
@@ -308,7 +311,7 @@
 			projectRoot = "";
 			targets = (
 				6AC027432C3CD2CB0052CBFD /* iAm */,
-				CD9285972C4768D4006F1E11 /* iAmWidgetExtension */,
+				CD9285C32C47A0F8006F1E11 /* iAmWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -323,11 +326,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD9285962C4768D4006F1E11 /* Resources */ = {
+		CD9285C22C47A0F8006F1E11 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD9285A12C4768D5006F1E11 /* Assets.xcassets in Resources */,
+				CD9285CF2C47A0FA006F1E11 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,24 +359,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD9285942C4768D4006F1E11 /* Sources */ = {
+		CD9285C02C47A0F8006F1E11 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD92859D2C4768D4006F1E11 /* iAmWidgetBundle.swift in Sources */,
-				CD9285A92C476909006F1E11 /* Enums.swift in Sources */,
-				CD92859F2C4768D4006F1E11 /* iAmWidget.swift in Sources */,
-				CD9285AA2C47690B006F1E11 /* Note.swift in Sources */,
+				CD9285C92C47A0F8006F1E11 /* iAmWidgetBundle.swift in Sources */,
+				CD9285CB2C47A0F8006F1E11 /* iAmWidget.swift in Sources */,
+				CD9285D82C47A125006F1E11 /* Enums.swift in Sources */,
+				CD9285CD2C47A0F9006F1E11 /* AppIntent.swift in Sources */,
+				CD9285D72C47A120006F1E11 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CD9285A42C4768D5006F1E11 /* PBXTargetDependency */ = {
+		CD9285D22C47A0FA006F1E11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CD9285972C4768D4006F1E11 /* iAmWidgetExtension */;
-			targetProxy = CD9285A32C4768D5006F1E11 /* PBXContainerItemProxy */;
+			target = CD9285C32C47A0F8006F1E11 /* iAmWidgetExtension */;
+			targetProxy = CD9285D12C47A0FA006F1E11 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -561,7 +565,7 @@
 			};
 			name = Release;
 		};
-		CD9285A72C4768D5006F1E11 /* Debug */ = {
+		CD9285D52C47A0FA006F1E11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -589,7 +593,7 @@
 			};
 			name = Debug;
 		};
-		CD9285A82C4768D5006F1E11 /* Release */ = {
+		CD9285D62C47A0FA006F1E11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -638,11 +642,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD9285A62C4768D5006F1E11 /* Build configuration list for PBXNativeTarget "iAmWidgetExtension" */ = {
+		CD9285D42C47A0FA006F1E11 /* Build configuration list for PBXNativeTarget "iAmWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD9285A72C4768D5006F1E11 /* Debug */,
-				CD9285A82C4768D5006F1E11 /* Release */,
+				CD9285D52C47A0FA006F1E11 /* Debug */,
+				CD9285D62C47A0FA006F1E11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -11,34 +11,58 @@ import SwiftData
 struct ContentView: View {
     @StateObject var navPath = Router.shared
     @State var showSheet = false
+    @State var moodValue: Mood = .neutral
+    
+    @Environment(\.colorScheme) private var colorScheme
     
     var body: some View {
         NavigationStack(path: $navPath.path) {
-                Text("iAm")
-                    .font(.system(size: 34, weight: .bold))
-                    .padding(.trailing, 290)
             HistoryView()
-            .navigationDestination(for: Destination.self) { destination in
-                switch destination {
-                case .noteView(let note):
-                    NoteView(note: note)
+                .onOpenURL { url in
+                    guard url.scheme == "testNotes" else { return }
+                    
+                    showSheet = true
+                    moodValue = setMoodValue(mood: url.lastPathComponent)
                 }
-            }
-
-            .toolbar {
-                ToolbarItemGroup {
-                    Button("Add", systemImage: "plus.circle.fill") {
-                        showSheet = true
+                .navigationDestination(for: Destination.self) { destination in
+                    switch destination {
+                    case .noteView(let note):
+                        NoteView(note: note)
                     }
                 }
-            }
-            .sheet(isPresented: $showSheet, content: {
-                StateOfMindView(showSheet: $showSheet)
-                    .presentationDragIndicator(.visible)
-                    .presentationCornerRadius(10)
-            })
+                .navigationTitle("iAm")
+                .toolbar {
+                    ToolbarItemGroup {
+                        Button("Add", systemImage: "plus.circle.fill") {
+                            showSheet = true
+                        }
+                    }
+                }
+                .background(colorScheme == .dark ? Color(uiColor: .systemBackground) : Color(uiColor: .secondarySystemBackground))
+                .sheet(isPresented: $showSheet, content: {
+                    StateOfMindView(moodValue: $moodValue, showSheet: $showSheet)
+                        .presentationDragIndicator(.visible)
+                        .presentationCornerRadius(10)
+                })
         }
         .ignoresSafeArea(.all)
+    }
+    
+    private func setMoodValue(mood: String) -> Mood {
+        switch mood {
+        case "unpleasant":
+            return .unpleasant
+        case "slightlyUnpleasant":
+            return .slightlyUnpleasant
+        case "neutral":
+            return .neutral
+        case "slightlyPleasant":
+            return .slightlyPleasant
+        case "pleasant":
+            return .pleasant
+        default:
+            return .neutral
+        }
     }
 }
 
