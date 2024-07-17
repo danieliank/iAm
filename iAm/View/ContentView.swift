@@ -12,6 +12,8 @@ struct ContentView: View {
     @StateObject var navPath = Router.shared
     @State var showSheet = false
     
+    
+    
     var body: some View {
         NavigationStack(path: $navPath.path) {
                 Text("iAm")
@@ -42,9 +44,9 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-        .modelContainer(SampleData.shared.modelContainer)
-}
+//#Preview {
+//    ContentView(note: SampleData.)
+//        .modelContainer(SampleData.shared.modelContainer)
+//}
 
 

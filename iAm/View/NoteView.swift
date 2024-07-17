@@ -23,6 +23,8 @@ struct NoteView: View {
     @State var showSheet: Bool = false
     @State var updatedMood: Mood = .neutral // hny untk receive update la
     
+//    let date = DateFormatter().dateFormat
+    
     var body: some View {
         VStack {
             
@@ -44,7 +46,19 @@ struct NoteView: View {
             vm.fetchAllRecording(audioURLs: note.audioFileName)
         }
         .background(Color(uiColor: .secondarySystemBackground))
+        .navigationTitle(note.timestamp.formatted(Date.FormatStyle()
+            .weekday(.abbreviated)
+            .day(.twoDigits)
+        ) + " · " + note.timestamp.formatted(Date.FormatStyle().hour().minute(.twoDigits)))
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItem (placement: .topBarTrailing) {
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Image(systemName: "ellipsis.circle").fontWeight(.medium)
+                })
+                .foregroundStyle(.blue)
+            }
+            
             ToolbarItemGroup(placement: .bottomBar) {
                 Button(action: {}, label: {
                     Image(systemName: "checklist")
@@ -94,7 +108,7 @@ struct NoteView: View {
 
 #Preview {
     NavigationStack {
-        NoteView(note: SampleData.shared.note)
+        NoteView(note: Note.sampleData[0])
     }
     .modelContainer(SampleData.shared.modelContainer)
 }
