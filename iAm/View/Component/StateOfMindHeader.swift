@@ -25,7 +25,7 @@ struct StateOfMindHeader: View {
                 HStack {
                     Text("REFLECT")
                         .font(.caption)
-                        .foregroundStyle(Color.reflect)
+                        .foregroundColor(Color(uiColor: .secondaryLabel))
                         .opacity(0.5)
                         .padding([.top, .leading], 10)
 
@@ -50,9 +50,9 @@ struct StateOfMindHeader: View {
 
                 
             }
-            .background(Color.bg)
+            .background(Color(uiColor: .systemBackground))
             .cornerRadius(10)
-            .shadow(color: .shadow.opacity(0.2), radius: 4)
+//            .shadow(color: .secondary.opacity(1), radius: 4)
             .frame(width: 260, height: 100)
             
             

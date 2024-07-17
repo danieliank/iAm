@@ -11,6 +11,7 @@ import SwiftData
 import PhotosUI
 
 struct NoteView: View {
+    @Environment(\.colorScheme) private var colorScheme
     @Bindable var note: Note
     @State var selectedPhoto: PhotosPickerItem?
     @State var showSheet: Bool = false
@@ -32,6 +33,7 @@ struct NoteView: View {
             TextField("note", text: $note.content, axis: .vertical)
                 .frame(width: 370)
         }
+        .background(Color(uiColor: .secondarySystemBackground))
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
                 Button(action: {}, label: {
@@ -59,8 +61,6 @@ struct NoteView: View {
                 .presentationDragIndicator(.visible)
                 .presentationCornerRadius(10)
         }
-        
-        
         Spacer()
     }
     
