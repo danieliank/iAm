@@ -24,9 +24,9 @@ enum Mood: Codable, CaseIterable {
         case .neutral:
             return "Neutral"
         case .slightlyPleasant:
-            return "Pleasant"
+            return "Slightly Pleasant"
         case .pleasant:
-            return "Very Pleasant"
+            return "Pleasant"
         }
     }
     
@@ -54,9 +54,9 @@ enum Mood: Codable, CaseIterable {
         case .neutral:
             return .green
         case .slightlyPleasant:
-            return .yellow
-        case .pleasant:
             return .orange
+        case .pleasant:
+            return .yellow
         }
     }
     

@@ -11,6 +11,7 @@ import SwiftData
 import PhotosUI
 
 struct NoteView: View {
+    @Environment(\.colorScheme) private var colorScheme
     @Bindable var note: Note
     @State var selectedPhoto: PhotosPickerItem?
     @State private var toggledView: String?
@@ -19,12 +20,14 @@ struct NoteView: View {
     
     @StateObject var vm = VoiceViewModel()
     
+    @State var showSheet: Bool = false
+    @State var updatedMood: Mood = .neutral // hny untk receive update la
     
     var body: some View {
         VStack {
             
             //Selected StateOfMind
-            StateOfMindHeader(selectedStateOfMind: note.mood)
+            StateOfMindHeader(selectedStateOfMind: note.mood, showSheet: $showSheet)
             
             if let photoData = note.noteImage, let uiImage = UIImage(data: photoData) {
                 Image(uiImage: uiImage)
@@ -40,6 +43,7 @@ struct NoteView: View {
         .onAppear {
             vm.fetchAllRecording(audioURLs: note.audioFileName)
         }
+        .background(Color(uiColor: .secondarySystemBackground))
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
                 Button(action: {}, label: {
@@ -70,12 +74,21 @@ struct NoteView: View {
 
             }
         }
+        .sheet(isPresented: $showSheet){
+            StateOfMindView(moodValue: note.mood, isEditing: true, updatedMoodValue: $updatedMood, onUpdate: updateMood)
+                .presentationDragIndicator(.visible)
+                .presentationCornerRadius(10)
+        }
         Spacer()
         if isRecorderToggled == true {
             AudioRecordToolbarView(vm:vm, note: note)
         } else {
             EmptyView()
         }
+    }
+    
+    func updateMood() -> Void {
+        note.mood = updatedMood
     }
 }
 
