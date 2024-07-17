@@ -37,13 +37,16 @@ struct NoteView: View {
                     .frame(maxWidth: .infinity, maxHeight: 300)
             }
             
-            TextField("note", text: $note.content, axis: .vertical)
-                .frame(width: 370)
-            RecordingListView(vm: vm, note: note)
+            TextEditor(text: $note.content)
+            .scrollContentBackground(.hidden)
+            .padding(.horizontal)
+            .background(Color(uiColor: .secondarySystemBackground))
         }
         .onAppear {
             vm.fetchAllRecording(audioURLs: note.audioFileName)
         }
+        .navigationTitle("date")
+        .navigationBarTitleDisplayMode(.inline)
         .background(Color(uiColor: .secondarySystemBackground))
         .navigationTitle(note.timestamp.formatted(Date.FormatStyle()
             .weekday(.abbreviated)
