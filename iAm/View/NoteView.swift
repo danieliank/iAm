@@ -29,9 +29,13 @@ struct NoteView: View {
                     .frame(maxWidth: .infinity, maxHeight: 300)
             }
             
-            TextField("note", text: $note.content, axis: .vertical)
-                .frame(width: 370)
+            TextEditor(text: $note.content)
+            .scrollContentBackground(.hidden)
+            .padding(.horizontal)
+            .background(Color(uiColor: .secondarySystemBackground))
         }
+        .navigationTitle("date")
+        .navigationBarTitleDisplayMode(.inline)
         .background(Color(uiColor: .secondarySystemBackground))
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
