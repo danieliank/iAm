@@ -52,10 +52,7 @@ struct StateOfMindHeader: View {
             }
             .background(Color(uiColor: .systemBackground))
             .cornerRadius(10)
-//            .shadow(color: .secondary.opacity(1), radius: 4)
             .frame(width: 260, height: 100)
-            
-            
         }
         .padding()
     }
