@@ -40,7 +40,7 @@ struct ContentView: View {
                 }
                 .background(colorScheme == .dark ? Color(uiColor: .systemBackground) : Color(uiColor: .secondarySystemBackground))
                 .sheet(isPresented: $showSheet, content: {
-                    StateOfMindView(moodValue: $moodValue, isEditing: false)
+                    StateOfMindView(moodValue: $moodValue, showSheet: $showSheet)
                         .presentationDragIndicator(.visible)
                         .presentationCornerRadius(10)
                 })

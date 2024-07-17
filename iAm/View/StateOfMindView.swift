@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct StateOfMindView: View {
-    @Environment(\.dismiss) private var dismiss
+    
+    @State var moodValue: Mood
+        @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
     
-    @Binding var moodValue: Mood
+//    @Binding var showSheet: Bool
     @State var isEditing: Bool
+    var updatedMoodValue: Binding<Mood>?
+    var onUpdate: () -> Void = {}
     
     var body: some View {
         VStack {
@@ -42,16 +46,34 @@ struct StateOfMindView: View {
                 .tabViewStyle(.page(indexDisplayMode: .always))
             
             Button {
+                
                 if (isEditing) {
+                   
+                    if let updatedMoodValue = updatedMoodValue {
+                        updatedMoodValue.wrappedValue = moodValue
+                    }
+//                    updatedMoodValue = moodValue
+                    onUpdate() // note.mood = updatedMood
                     dismiss()
-                } else  {
+                    
+                    // flow: note.mood = (updatedMood or updatedMoodValue) = moodValue
+                 //   showSheet = false
+                    
+                }
+                
+                else  {
+                    
                     let newNote = Note(mood: moodValue, content: "", timestamp: Date())
                     context.insert(newNote)
                     
                     Router.shared.path.append(.noteView(note: newNote))
+                                    dismiss()
+                    //            showSheet.toggle()
+                  //  showSheet = false
                     
-                    dismiss()
                 }
+                
+                
             } label: {
                 Text(isEditing ? "Update" : "Log Emotion")
                     .frame(width: 115, height: 18)
@@ -68,6 +90,6 @@ struct StateOfMindView: View {
     }
 }
 
-#Preview {
-    StateOfMindView(moodValue: .constant(.neutral), isEditing: false)
-}
+//#Preview {
+//    StateOfMindView(moodValue: .pleasant, showSheet: .constant(true), isEditing: false, updatedMoodValue: <#Binding<Mood?>#>)
+//}
