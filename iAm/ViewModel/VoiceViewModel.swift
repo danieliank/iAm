@@ -65,14 +65,16 @@ class VoiceViewModel : NSObject , ObservableObject , AVAudioPlayerDelegate {
     }
     
     func fetchAllRecording(audioURLs: [URL]) {
-        // Loop melalui file yang difilter
-        for i in audioURLs {
-            recordingsList.append(Recording(fileURL: i, createdAt: getFileDate(for: i), isPlaying: false))
-            print(i)
+        recordingsList = []
+        
+        if (audioURLs.count > 0) {
+            for i in audioURLs {
+                recordingsList.append(Recording(fileURL: i, createdAt: getFileDate(for: i), isPlaying: false))
+                print(i)
+            }
+            
+            recordingsList.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending })
         }
-        
-        
-        recordingsList.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending })
     }
     
     func startPlaying(url : URL) {
@@ -122,26 +124,12 @@ class VoiceViewModel : NSObject , ObservableObject , AVAudioPlayerDelegate {
             print("Can't delete")
         }
         
-        for i in 0..<recordingsList.count {
-            if note.audioFileName[i] == url {
-                if recordingsList[i].isPlaying == true {
-                    stopPlaying(url: recordingsList[i].fileURL)
-                }
-                
-                note.audioFileName.remove(at : i)
-                
-                break
-            }
-            if recordingsList[i].fileURL == url {
-                if recordingsList[i].isPlaying == true {
-                    stopPlaying(url: recordingsList[i].fileURL)
-                }
-                
-                recordingsList.remove(at : i)
-                
-                break
-            }
+        for i in 0..<note.audioFileName.count {
             
+            if note.audioFileName[i] == url {
+                note.audioFileName.remove(at : i)
+                break
+            }
         }
         
         fetchAllRecording(audioURLs: note.audioFileName)

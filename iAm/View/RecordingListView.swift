@@ -42,16 +42,18 @@ struct RecordingListView: View {
                                 }
                                 WaveformView(audioURL: recording.fileURL, configuration: configuration)
                                     .padding(20)
-                                VStack {
-                                    Button(action: {
-                                        vm.deleteRecording(url:recording.fileURL, note: note)
-                                    }) {
-                                        Image(systemName:"xmark.circle.fill")
-                                            .foregroundColor(.gray)
-                                            .font(.system(size:15))
-                                            .offset(x: 14, y: 5)
+                                if recording.isPlaying == false {
+                                    VStack {
+                                        Button(action: {
+                                            vm.deleteRecording(url:recording.fileURL, note: note)
+                                        }) {
+                                            Image(systemName:"xmark.circle.fill")
+                                                .foregroundColor(.gray)
+                                                .font(.system(size:15))
+                                                .offset(x: 14, y: 5)
+                                        }
+                                        Spacer()
                                     }
-                                    Spacer()
                                 }
                                 
                             }.padding(.horizontal, 35)                                }
