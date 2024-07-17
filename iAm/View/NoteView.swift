@@ -21,7 +21,6 @@ struct NoteView: View {
     @StateObject var vm = VoiceViewModel()
     
     @State var showSheet: Bool = false
-    @State var updatedMood: Mood = .neutral // hny untk receive update la
     
 //    let date = DateFormatter().dateFormat
     
@@ -89,7 +88,7 @@ struct NoteView: View {
             }
         }
         .sheet(isPresented: $showSheet){
-            StateOfMindView(moodValue: note.mood, isEditing: true, updatedMoodValue: $updatedMood, onUpdate: updateMood)
+            StateOfMindView(moodValue: $note.mood, isEditing: true)
                 .presentationDragIndicator(.visible)
                 .presentationCornerRadius(10)
         }
@@ -99,10 +98,6 @@ struct NoteView: View {
         } else {
             EmptyView()
         }
-    }
-    
-    func updateMood() -> Void {
-        note.mood = updatedMood
     }
 }
 
