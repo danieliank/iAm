@@ -13,12 +13,14 @@ import PhotosUI
 struct NoteView: View {
     @Bindable var note: Note
     @State var selectedPhoto: PhotosPickerItem?
+    @State var showSheet: Bool = false
+    @State var updatedMood: Mood = .neutral // hny untk receive update la
     
     var body: some View {
         VStack {
             
             //Selected StateOfMind
-            StateOfMindHeader(selectedStateOfMind: note.mood)
+            StateOfMindHeader(selectedStateOfMind: note.mood, showSheet: $showSheet)
             
             if let photoData = note.noteImage, let uiImage = UIImage(data: photoData) {
                 Image(uiImage: uiImage)
@@ -52,8 +54,18 @@ struct NoteView: View {
                 })
             }
         }
+        .sheet(isPresented: $showSheet){
+            StateOfMindView(moodValue: note.mood, isEditing: true, updatedMoodValue: $updatedMood, onUpdate: updateMood)
+                .presentationDragIndicator(.visible)
+                .presentationCornerRadius(10)
+        }
+        
         
         Spacer()
+    }
+    
+    func updateMood() -> Void {
+        note.mood = updatedMood
     }
 }
 

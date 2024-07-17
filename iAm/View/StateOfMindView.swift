@@ -8,23 +8,28 @@
 import SwiftUI
 
 struct StateOfMindView: View {
-    @State var moodValue: Mood = .neutral
+    
+    @State var moodValue: Mood
+        @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
     
-    @Binding var showSheet: Bool
+//    @Binding var showSheet: Bool
+    @State var isEditing: Bool
+    var updatedMoodValue: Binding<Mood>?
+    var onUpdate: () -> Void = {}
     
     var body: some View {
         VStack {
-            Text("New Note")
+            Text(isEditing ? "Edit Note" : "New Note")
                 .font(.system(size: 17))
                 .fontWeight(.semibold)
                 .padding(.bottom, 74)
                 .padding(.top, -10)
             
-            Text("How do you feel right now?")
+            Text(isEditing ? "How did your emotion change?" : "How do you feel right now?")
                 .font(.headline)
                 .padding(.top, -10)
-    
+            
             TabView(selection: $moodValue) {
                 ForEach(Mood.allCases, id: \.self) { mood in
                     VStack {
@@ -39,16 +44,38 @@ struct StateOfMindView: View {
                 }
             } .frame(width: .infinity, height: 450)
                 .tabViewStyle(.page(indexDisplayMode: .always))
-      
+            
             Button {
-                let newNote = Note(mood: moodValue, content: "", timestamp: Date())
-                context.insert(newNote)
                 
-                Router.shared.path.append(.noteView(note: newNote))
+                if (isEditing) {
+                   
+                    if let updatedMoodValue = updatedMoodValue {
+                        updatedMoodValue.wrappedValue = moodValue
+                    }
+//                    updatedMoodValue = moodValue
+                    onUpdate() // note.mood = updatedMood
+                    dismiss()
+                    
+                    // flow: note.mood = (updatedMood or updatedMoodValue) = moodValue
+                 //   showSheet = false
+                    
+                }
                 
-                showSheet.toggle()
+                else  {
+                    
+                    let newNote = Note(mood: moodValue, content: "", timestamp: Date())
+                    context.insert(newNote)
+                    
+                    Router.shared.path.append(.noteView(note: newNote))
+                                    dismiss()
+                    //            showSheet.toggle()
+                  //  showSheet = false
+                    
+                }
+                
+                
             } label: {
-                Text("Log Emotion")
+                Text(isEditing ? "Update" : "Log Emotion")
                     .frame(width: 115, height: 18)
                     .padding()
                     .background(.blue)
@@ -56,11 +83,13 @@ struct StateOfMindView: View {
                     .cornerRadius(12)
             }
             .padding(.top, 50)
+            
         }
         .frame(height: UIScreen.main.bounds.height)
+        
     }
 }
 
-#Preview {
-    StateOfMindView(showSheet: .constant(true))
-}
+//#Preview {
+//    StateOfMindView(moodValue: .pleasant, showSheet: .constant(true), isEditing: false, updatedMoodValue: <#Binding<Mood?>#>)
+//}

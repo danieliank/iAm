@@ -35,7 +35,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $showSheet, content: {
-                StateOfMindView(showSheet: $showSheet)
+                StateOfMindView(moodValue: .neutral, isEditing: false, updatedMoodValue: nil)
                     .presentationDragIndicator(.visible)
                     .presentationCornerRadius(10)
             })

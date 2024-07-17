@@ -10,18 +10,23 @@ import SwiftUI
 struct StateOfMindHeader: View {
     var selectedStateOfMind: Mood
     @State private var currentIndex = 0
+    @Binding var showSheet: Bool
 
     var body: some View {
         HStack(spacing: 15) {
             Image(selectedStateOfMind.image)
                 .resizable()
                 .frame(width: 80, height: 80)
+                .onTapGesture {
+                    showSheet = true
+                }
 
             VStack {
                 HStack {
                     Text("REFLECT")
                         .font(.caption)
-                        .opacity(0.3)
+                        .foregroundStyle(Color.reflect)
+                        .opacity(0.5)
                         .padding([.top, .leading], 10)
 
                     Spacer()
@@ -45,9 +50,9 @@ struct StateOfMindHeader: View {
 
                 
             }
-            .background(.white)
+            .background(Color.bg)
             .cornerRadius(10)
-            .shadow(color: .black.opacity(0.2), radius: 4)
+            .shadow(color: .shadow.opacity(0.2), radius: 4)
             .frame(width: 260, height: 100)
             
             
@@ -57,10 +62,10 @@ struct StateOfMindHeader: View {
 }
 
 #Preview {
-    StateOfMindHeader(selectedStateOfMind: Note.sampleData[0].mood)
+    StateOfMindHeader(selectedStateOfMind: Note.sampleData[0].mood, showSheet: .constant(false))
 }
 
 #Preview {
-    StateOfMindHeader(selectedStateOfMind: Note.sampleData[0].mood)
+    StateOfMindHeader(selectedStateOfMind: Note.sampleData[0].mood, showSheet: .constant(false))
 }
 
