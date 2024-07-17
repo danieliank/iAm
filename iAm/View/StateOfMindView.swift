@@ -37,8 +37,9 @@ struct StateOfMindView: View {
                         Text(mood.title)
                         .font(.system(size: 30, weight: .bold))}
                 }
-            } .frame(width: .infinity, height: 450)
-                .tabViewStyle(.page(indexDisplayMode: .always))
+            }
+            .frame(height: 450)
+            .tabViewStyle(.page(indexDisplayMode: .always))
       
             Button {
                 let newNote = Note(mood: moodValue, content: "", timestamp: Date())

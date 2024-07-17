@@ -21,11 +21,11 @@ class VoiceViewModel : NSObject , ObservableObject , AVAudioPlayerDelegate {
     override init(){
         super.init()
         
-        fetchAllRecording()
+        
     }
-   
- 
-    func startRecording(){
+    
+    
+    func startRecording(note: Note){
         
         let recordingSession = AVAudioSession.sharedInstance()
         do {
@@ -38,7 +38,8 @@ class VoiceViewModel : NSObject , ObservableObject , AVAudioPlayerDelegate {
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let fileName = path.appendingPathComponent("\(Date().toString(dateFormat: "dd-MM-YY 'at' HH:mm:ss")).m4a")
         
-        
+        // simpen filename
+        note.audioFileName.append(fileName)
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -65,88 +66,95 @@ class VoiceViewModel : NSObject , ObservableObject , AVAudioPlayerDelegate {
         isRecording = false
     }
     
-    func fetchAllRecording(){
-            
-        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let directoryContents = try! FileManager.default.contentsOfDirectory(at: path, includingPropertiesForKeys: nil)
-
-        for i in directoryContents {
-            recordingsList.append(Recording(fileURL : i, createdAt:getFileDate(for: i), isPlaying: false))
+    func fetchAllRecording(audioURLs: [URL]) {
+        // Loop melalui file yang difilter
+        for i in audioURLs {
+            recordingsList.append(Recording(fileURL: i, createdAt: getFileDate(for: i), isPlaying: false))
+            print(i)
         }
-            
-        recordingsList.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending})
-            
+        
+        
+        recordingsList.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending })
     }
-
+    
     func startPlaying(url : URL) {
-      
+        
         let playSession = AVAudioSession.sharedInstance()
-            
+        
         do {
             try playSession.overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
         } catch {
             print("Playing failed in Device")
         }
-            
+        
         do {
             audioPlayer = try AVAudioPlayer(contentsOf : url)
             audioPlayer.prepareToPlay()
             audioPlayer.play()
-                
+            
             for i in 0..<recordingsList.count{
                 if recordingsList[i].fileURL == url{
                     recordingsList[i].isPlaying = true
                 }
             }
-                
+            
         } catch {
             print("Playing Failed")
         }
-                
+        
     }
-
+    
     func stopPlaying(url : URL){
-      
+        
         audioPlayer.stop()
-      
+        
         for i in 0..<recordingsList.count {
             if recordingsList[i].fileURL == url {
                 recordingsList[i].isPlaying = false
             }
         }
-      
+        
     }
     
-    func deleteRecording(url : URL){
-            
+    func deleteRecording(url : URL, note: Note){
+        
         do {
             try FileManager.default.removeItem(at : url)
         } catch {
             print("Can't delete")
         }
-            
+        
         for i in 0..<recordingsList.count {
-            
+            if note.audioFileName[i] == url {
+                if recordingsList[i].isPlaying == true {
+                    stopPlaying(url: recordingsList[i].fileURL)
+                }
+                
+                note.audioFileName.remove(at : i)
+                
+                break
+            }
             if recordingsList[i].fileURL == url {
                 if recordingsList[i].isPlaying == true {
                     stopPlaying(url: recordingsList[i].fileURL)
                 }
                 
                 recordingsList.remove(at : i)
-                    
+                
                 break
             }
+            
         }
     }
     
     func getFileDate(for file: URL) -> Date {
-            if let attributes = try? FileManager.default.attributesOfItem(atPath: file.path) as [FileAttributeKey: Any],
-                let creationDate = attributes[FileAttributeKey.creationDate] as? Date {
-                return creationDate
-            } else {
-                return Date()
-            }
+        if let attributes = try? FileManager.default.attributesOfItem(atPath: file.path) as [FileAttributeKey: Any],
+           let creationDate = attributes[FileAttributeKey.creationDate] as? Date {
+            return creationDate
+        } else {
+            return Date()
         }
+    }
 }
 
 struct Recording : Equatable {

@@ -13,14 +13,14 @@ class Note {
     var mood: Mood
     var content: String
     var noteImage: Data?
-    var audio: String?
+    var audioFileName: [URL]
     var timestamp: Date
     
-    init(mood: Mood, content: String, noteImage: Data? = nil, audio: String? = nil, timestamp: Date) {
+    init(mood: Mood, content: String, noteImage: Data? = nil, audio: [URL] = [], timestamp: Date) {
         self.mood = mood
         self.content = content
         self.noteImage = noteImage
-        self.audio = audio
+        self.audioFileName = audio
         self.timestamp = timestamp
     }
     

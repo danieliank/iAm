@@ -13,6 +13,12 @@ import PhotosUI
 struct NoteView: View {
     @Bindable var note: Note
     @State var selectedPhoto: PhotosPickerItem?
+    @State private var toggledView: String?
+    @State private var isRecorderToggled: Bool = false
+    @State private var micIcon: String = "mic"
+    
+    @StateObject var vm = VoiceViewModel()
+    
     
     var body: some View {
         VStack {
@@ -29,6 +35,10 @@ struct NoteView: View {
             
             TextField("note", text: $note.content, axis: .vertical)
                 .frame(width: 370)
+            RecordingListView(vm: vm, note: note)
+        }
+        .onAppear {
+            vm.fetchAllRecording(audioURLs: note.audioFileName)
         }
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
@@ -47,13 +57,25 @@ struct NoteView: View {
                     }
                 }
                 Spacer()
-                Button(action: {}, label: {
-                    Image(systemName: "mic")
+                Button(action: {
+                    self.toggledView = "mic"
+                    withAnimation {
+                        isRecorderToggled.toggle()
+                    }
+                    micIcon = isRecorderToggled ? "mic.fill" : "mic"
+                }, label: {
+                    Image(systemName: micIcon)
+                        .foregroundStyle(.blue)
                 })
+
             }
         }
-        
         Spacer()
+        if isRecorderToggled == true {
+            AudioRecordToolbarView(vm:vm, note: note)
+        } else {
+            EmptyView()
+        }
     }
 }
 

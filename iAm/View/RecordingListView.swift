@@ -12,12 +12,12 @@ import DSWaveformImageViews
 
 struct RecordingListView: View {
     
-    @ObservedObject var vm = VoiceViewModel()
+    @ObservedObject var vm: VoiceViewModel
     @State private var configuration: Waveform.Configuration = Waveform.Configuration(
         style: .striped(Waveform.Style.StripeConfig(color: .gray, width: 4, lineCap: .round)),
         verticalScalingFactor: 1
     )
-    
+    var note: Note
     var body: some View {
         NavigationView {
             VStack {
@@ -45,7 +45,8 @@ struct RecordingListView: View {
                                         .padding(20)
                                     VStack {
                                         Button(action: {
-                                            vm.deleteRecording(url:recording.fileURL)
+                                            vm.deleteRecording(url:recording.fileURL, note: note)
+                                            vm.fetchAllRecording(audioURLs: note.audioFileName)
                                         }) {
                                             Image(systemName:"xmark.circle.fill")
                                                 .foregroundColor(.gray)
@@ -57,7 +58,7 @@ struct RecordingListView: View {
                                     
                                 }.padding(.horizontal, 35)                                }
                         }
-                        
+                        .padding(.top, 10)
                     }
                 }
                 
@@ -68,6 +69,6 @@ struct RecordingListView: View {
 
 struct RecordingListView_Previews: PreviewProvider {
     static var previews: some View {
-        RecordingListView()
+        RecordingListView(vm: VoiceViewModel(), note: Note.sampleData[0])
     }
 }

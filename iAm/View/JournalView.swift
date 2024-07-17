@@ -13,11 +13,12 @@ struct JournalView: View {
     @State private var micIcon: String = "mic"
     
     @ObservedObject var vm = VoiceViewModel()
+    var note: Note
     
     var body: some View {
         NavigationStack {
             //this is not final
-           RecordingListView()
+            RecordingListView(vm:vm, note: note)
             //until here
             Text("") //to be replaced by the Journal Content
                 .toolbar {
@@ -78,7 +79,7 @@ struct JournalView: View {
                 }
         }
         if isRecorderToggled == true {
-                AudioRecordToolbarView()
+            AudioRecordToolbarView(vm: vm, note: Note.sampleData[0])
         } else {
             EmptyView()
         }
@@ -86,5 +87,5 @@ struct JournalView: View {
 }
 
 #Preview {
-    JournalView()
+    JournalView(note: Note.sampleData[0])
 }

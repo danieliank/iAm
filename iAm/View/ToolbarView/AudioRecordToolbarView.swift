@@ -10,7 +10,9 @@ import SwiftUI
 struct AudioRecordToolbarView: View {
     @State private var pulsate:Bool = false
     @State private var animate = false
-    @ObservedObject var vm = VoiceViewModel()
+    @ObservedObject var vm: VoiceViewModel
+    
+    var note: Note
     
     var body: some View {
         ZStack {
@@ -50,8 +52,9 @@ struct AudioRecordToolbarView: View {
             animate.toggle()
             if vm.isRecording == true {
                 vm.stopRecording()
+                vm.fetchAllRecording(audioURLs: note.audioFileName)
             } else {
-                vm.startRecording()
+                vm.startRecording(note: note)
                 
             }
             
@@ -61,5 +64,5 @@ struct AudioRecordToolbarView: View {
 }
 
 #Preview {
-    AudioRecordToolbarView()
+    AudioRecordToolbarView(vm: VoiceViewModel(), note: Note.sampleData[0])
 }

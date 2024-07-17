@@ -25,7 +25,10 @@ struct iAmApp: App {
 
     var body: some Scene {
         WindowGroup {
-            JournalView()
+//            NoteView(note: SampleData.shared.note)
+//            JournalView()
+//            StateOfMindView(showSheet: .constant(true))
+            ContentView()
         }
         .modelContainer(sharedModelContainer)
     }
