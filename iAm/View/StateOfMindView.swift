@@ -25,7 +25,7 @@ struct StateOfMindView: View {
             Text(isEditing ? "How did your emotion change?" : "How do you feel right now?")
                 .font(.headline)
                 .padding(.top, -10)
-            
+
             ZStack{
                 
                 TabView(selection: $moodValue) {
@@ -84,6 +84,7 @@ struct StateOfMindView: View {
                     context.insert(newNote)
                     Router.shared.path.append(.noteView(note: newNote))
                     dismiss()
+
                 }
             } label: {
                 Text(isEditing ? "Update" : "Log Emotion")
@@ -104,3 +105,4 @@ struct StateOfMindView: View {
 #Preview {
     StateOfMindView(moodValue: .constant(.neutral), isEditing: false)
 }
+

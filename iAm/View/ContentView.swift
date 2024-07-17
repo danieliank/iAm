@@ -15,6 +15,8 @@ struct ContentView: View {
     
     @Environment(\.colorScheme) private var colorScheme
     
+    
+    
     var body: some View {
         NavigationStack(path: $navPath.path) {
             HistoryView()
@@ -66,9 +68,9 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-        .modelContainer(SampleData.shared.modelContainer)
-}
+//#Preview {
+//    ContentView(note: SampleData.)
+//        .modelContainer(SampleData.shared.modelContainer)
+//}
 
 

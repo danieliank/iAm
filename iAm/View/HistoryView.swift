@@ -36,7 +36,10 @@ struct HistoryView: View {
                                         .multilineTextAlignment(.leading)
                                     Spacer()
                                     Divider()
-                                    Text("Friday, 12 July • 11.53")
+                                    Text(note.timestamp.formatted(Date.FormatStyle().weekday(.wide)
+                                        .day(.twoDigits).month()
+                                        ) + " · " + note.timestamp.formatted(Date.FormatStyle().hour().minute(.twoDigits))
+                                    )
                                 }
                             }
                             .frame(maxHeight: .infinity)

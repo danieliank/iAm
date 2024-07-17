@@ -14,7 +14,15 @@ struct NoteView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Bindable var note: Note
     @State var selectedPhoto: PhotosPickerItem?
+    @State private var toggledView: String?
+    @State private var isRecorderToggled: Bool = false
+    @State private var micIcon: String = "mic"
+    
+    @StateObject var vm = VoiceViewModel()
+    
     @State var showSheet: Bool = false
+    
+//    let date = DateFormatter().dateFormat
     
     var body: some View {
         VStack {
@@ -34,10 +42,25 @@ struct NoteView: View {
             .padding(.horizontal)
             .background(Color(uiColor: .secondarySystemBackground))
         }
+        .onAppear {
+            vm.fetchAllRecording(audioURLs: note.audioFileName)
+        }
         .navigationTitle("date")
         .navigationBarTitleDisplayMode(.inline)
         .background(Color(uiColor: .secondarySystemBackground))
+        .navigationTitle(note.timestamp.formatted(Date.FormatStyle()
+            .weekday(.abbreviated)
+            .day(.twoDigits)
+        ) + " · " + note.timestamp.formatted(Date.FormatStyle().hour().minute(.twoDigits)))
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItem (placement: .topBarTrailing) {
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Image(systemName: "ellipsis.circle").fontWeight(.medium)
+                })
+                .foregroundStyle(.blue)
+            }
+            
             ToolbarItemGroup(placement: .bottomBar) {
                 Button(action: {}, label: {
                     Image(systemName: "checklist")
@@ -54,9 +77,17 @@ struct NoteView: View {
                     }
                 }
                 Spacer()
-                Button(action: {}, label: {
-                    Image(systemName: "mic")
+                Button(action: {
+                    self.toggledView = "mic"
+                    withAnimation {
+                        isRecorderToggled.toggle()
+                    }
+                    micIcon = isRecorderToggled ? "mic.fill" : "mic"
+                }, label: {
+                    Image(systemName: micIcon)
+                        .foregroundStyle(.blue)
                 })
+
             }
         }
         .sheet(isPresented: $showSheet){
@@ -65,12 +96,17 @@ struct NoteView: View {
                 .presentationCornerRadius(10)
         }
         Spacer()
+        if isRecorderToggled == true {
+            AudioRecordToolbarView(vm:vm, note: note)
+        } else {
+            EmptyView()
+        }
     }
 }
 
 #Preview {
     NavigationStack {
-        NoteView(note: SampleData.shared.note)
+        NoteView(note: Note.sampleData[0])
     }
     .modelContainer(SampleData.shared.modelContainer)
 }

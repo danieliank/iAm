@@ -15,10 +15,13 @@
 		6AC0274A2C3CD2CB0052CBFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC027492C3CD2CB0052CBFD /* ContentView.swift */; };
 		6AC0274E2C3CD2CC0052CBFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC0274D2C3CD2CC0052CBFD /* Assets.xcassets */; };
 		6AC027512C3CD2CC0052CBFD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC027502C3CD2CC0052CBFD /* Preview Assets.xcassets */; };
-		9604EE252C3D74320088D47C /* AudioRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604EE242C3D74320088D47C /* AudioRecordView.swift */; };
-		9604EE272C3DA7680088D47C /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604EE262C3DA7680088D47C /* Toolbar.swift */; };
-		9604EE2A2C3DA99F0088D47C /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604EE292C3DA99F0088D47C /* Navbar.swift */; };
 		9604EE2C2C3DB6EA0088D47C /* AudioRecordToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604EE2B2C3DB6EA0088D47C /* AudioRecordToolbarView.swift */; };
+		9684089A2C3E73280099EBEE /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968408992C3E73280099EBEE /* JournalView.swift */; };
+		968408A42C40EB960099EBEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968408A32C40EB960099EBEE /* Extensions.swift */; };
+		968408A62C442F760099EBEE /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968408A52C442F760099EBEE /* AudioManager.swift */; };
+		968408AC2C45655E0099EBEE /* RecordingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968408AB2C45655E0099EBEE /* RecordingListView.swift */; };
+		968408AF2C45A43B0099EBEE /* DSWaveformImage in Frameworks */ = {isa = PBXBuildFile; productRef = 968408AE2C45A43B0099EBEE /* DSWaveformImage */; };
+		968408B12C45A43B0099EBEE /* DSWaveformImageViews in Frameworks */ = {isa = PBXBuildFile; productRef = 968408B02C45A43B0099EBEE /* DSWaveformImageViews */; };
 		CD25558C2C3F7A15002702A8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD25558B2C3F7A15002702A8 /* Note.swift */; };
 		CD25558F2C3F7A5B002702A8 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD25558E2C3F7A5B002702A8 /* Enums.swift */; };
 		CD2555912C3F7B38002702A8 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2555902C3F7B38002702A8 /* SampleData.swift */; };
@@ -69,10 +72,11 @@
 		6AC027492C3CD2CB0052CBFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6AC0274D2C3CD2CC0052CBFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AC027502C3CD2CC0052CBFD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9604EE242C3D74320088D47C /* AudioRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordView.swift; sourceTree = "<group>"; };
-		9604EE262C3DA7680088D47C /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
-		9604EE292C3DA99F0088D47C /* Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
 		9604EE2B2C3DB6EA0088D47C /* AudioRecordToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordToolbarView.swift; sourceTree = "<group>"; };
+		968408992C3E73280099EBEE /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		968408A32C40EB960099EBEE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		968408A52C442F760099EBEE /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		968408AB2C45655E0099EBEE /* RecordingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingListView.swift; sourceTree = "<group>"; };
 		CD25558B2C3F7A15002702A8 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		CD25558E2C3F7A5B002702A8 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		CD2555902C3F7B38002702A8 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				968408AF2C45A43B0099EBEE /* DSWaveformImage in Frameworks */,
+				968408B12C45A43B0099EBEE /* DSWaveformImageViews in Frameworks */,
 				6A81EE8A2C46674600D307F9 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +149,7 @@
 		6AC027462C3CD2CB0052CBFD /* iAm */ = {
 			isa = PBXGroup;
 			children = (
+				9684089D2C4071A90099EBEE /* AudioManager */,
 				CD9285162C475FA0006F1E11 /* iAm.entitlements */,
 				CD25558D2C3F7A3A002702A8 /* Helper */,
 				9604EE212C3D70FB0088D47C /* Model */,
@@ -171,11 +178,10 @@
 				CD2555DB2C451BF9002702A8 /* StateOfMindView.swift */,
 				6A3281052C40206C00466B16 /* StateOfMindCard.swift */,
 				6A3281032C401CA300466B16 /* HistoryView.swift */,
-				CD2555922C3F8051002702A8 /* NoteView.swift */,
 				9604EE282C3DA77F0088D47C /* ToolbarView */,
-				9604EE242C3D74320088D47C /* AudioRecordView.swift */,
-				9604EE262C3DA7680088D47C /* Toolbar.swift */,
-				9604EE292C3DA99F0088D47C /* Navbar.swift */,
+				968408992C3E73280099EBEE /* JournalView.swift */,
+				CD2555922C3F8051002702A8 /* NoteView.swift */,
+				968408AB2C45655E0099EBEE /* RecordingListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +207,15 @@
 				9604EE2B2C3DB6EA0088D47C /* AudioRecordToolbarView.swift */,
 			);
 			path = ToolbarView;
+			sourceTree = "<group>";
+		};
+		9684089D2C4071A90099EBEE /* AudioManager */ = {
+			isa = PBXGroup;
+			children = (
+				968408A32C40EB960099EBEE /* Extensions.swift */,
+				968408A52C442F760099EBEE /* AudioManager.swift */,
+			);
+			path = AudioManager;
 			sourceTree = "<group>";
 		};
 		CD25558D2C3F7A3A002702A8 /* Helper */ = {
@@ -253,6 +268,8 @@
 			);
 			name = iAm;
 			packageProductDependencies = (
+				968408AE2C45A43B0099EBEE /* DSWaveformImage */,
+				968408B02C45A43B0099EBEE /* DSWaveformImageViews */,
 				6A81EE892C46674600D307F9 /* Lottie */,
 			);
 			productName = iAm;
@@ -304,6 +321,7 @@
 			);
 			mainGroup = 6AC0273B2C3CD2CB0052CBFD;
 			packageReferences = (
+				968408AD2C45A43B0099EBEE /* XCRemoteSwiftPackageReference "DSWaveformImage" */,
 				6A81EE882C46674600D307F9 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 6AC027452C3CD2CB0052CBFD /* Products */;
@@ -341,15 +359,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9684089A2C3E73280099EBEE /* JournalView.swift in Sources */,
+				968408AC2C45655E0099EBEE /* RecordingListView.swift in Sources */,
 				CD2555952C3F80AA002702A8 /* Router.swift in Sources */,
 				6A3281042C401CA300466B16 /* HistoryView.swift in Sources */,
-				9604EE252C3D74320088D47C /* AudioRecordView.swift in Sources */,
-				9604EE272C3DA7680088D47C /* Toolbar.swift in Sources */,
 				6AC0274A2C3CD2CB0052CBFD /* ContentView.swift in Sources */,
 				CD25558C2C3F7A15002702A8 /* Note.swift in Sources */,
-				9604EE2A2C3DA99F0088D47C /* Navbar.swift in Sources */,
 				6AC027482C3CD2CB0052CBFD /* iAmApp.swift in Sources */,
 				CD2555932C3F8051002702A8 /* NoteView.swift in Sources */,
+				968408A62C442F760099EBEE /* AudioManager.swift in Sources */,
+				968408A42C40EB960099EBEE /* Extensions.swift in Sources */,
 				2FD3DFA92C450F3B00207E85 /* StateOfMindHeader.swift in Sources */,
 				CD25558F2C3F7A5B002702A8 /* Enums.swift in Sources */,
 				CD2555DC2C451BF9002702A8 /* StateOfMindView.swift in Sources */,
@@ -511,9 +530,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iAm/Preview Content\"";
-				DEVELOPMENT_TEAM = 84CY6V3X8V;
+				DEVELOPMENT_TEAM = 5T75SV584X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "OPEN UP YO MIC BOI";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -543,9 +563,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iAm/Preview Content\"";
-				DEVELOPMENT_TEAM = 84CY6V3X8V;
+				DEVELOPMENT_TEAM = 5T75SV584X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "OPEN UP YO MIC BOI";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -662,6 +683,14 @@
 				minimumVersion = 4.5.0;
 			};
 		};
+		968408AD2C45A43B0099EBEE /* XCRemoteSwiftPackageReference "DSWaveformImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmrschmidt/DSWaveformImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.2.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -669,6 +698,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6A81EE882C46674600D307F9 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		968408AE2C45A43B0099EBEE /* DSWaveformImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 968408AD2C45A43B0099EBEE /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
+			productName = DSWaveformImage;
+		};
+		968408B02C45A43B0099EBEE /* DSWaveformImageViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 968408AD2C45A43B0099EBEE /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
+			productName = DSWaveformImageViews;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
