@@ -1,0 +1,102 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    " . " : {
+
+    },
+    "Add" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambah"
+          }
+        }
+      }
+    },
+    "content" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "konten"
+          }
+        }
+      }
+    },
+    "How do you feel right now?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana perasaan anda sekarang?"
+          }
+        }
+      }
+    },
+    "iAm" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iAm"
+          }
+        }
+      }
+    },
+    "Log Emotion" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masukan Emosi"
+          }
+        }
+      }
+    },
+    "MON 8 · 11.53" : {
+
+    },
+    "New Note" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Note Baru"
+          }
+        }
+      }
+    },
+    "note" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "note"
+          }
+        }
+      }
+    },
+    "Notes" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notes"
+          }
+        }
+      }
+    },
+    "REFLECT" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "REFLECT"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

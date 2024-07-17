@@ -38,7 +38,12 @@ struct HistoryView: View {
                                             .multilineTextAlignment(.leading)
                                         Spacer()
                                         Divider()
-                                        Text("Friday, 12 July • 11.53")
+                                        HStack{
+                                            Text(note.timestamp, style: .date)
+                                            Text(" . ")
+                                            Text(note.timestamp, style: .time)
+                                        }
+                                      
                                     }
                                 }
                                 .frame(maxHeight: .infinity)
