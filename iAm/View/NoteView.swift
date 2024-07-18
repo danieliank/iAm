@@ -59,12 +59,12 @@ struct NoteView: View {
         ) + " · " + note.timestamp.formatted(Date.FormatStyle().hour().minute(.twoDigits)))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem (placement: .topBarTrailing) {
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Image(systemName: "ellipsis.circle").fontWeight(.medium)
-                })
-                .foregroundStyle(.blue)
-            }
+//            ToolbarItem (placement: .topBarTrailing) {
+//                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+//                    Image(systemName: "ellipsis.circle").fontWeight(.medium)
+//                })
+//                .foregroundStyle(.blue)
+//            }
             
             ToolbarItemGroup(placement: .bottomBar) {
                 Button(action: {}, label: {
