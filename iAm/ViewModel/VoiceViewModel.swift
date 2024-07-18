@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-class VoiceViewModel : NSObject , ObservableObject , AVAudioPlayerDelegate {
+class VoiceViewModel : NSObject, RecordProtocol, PlaybackProtocol, AudioFileProtocol , ObservableObject , AVAudioPlayerDelegate {
     
     var audioRecorder : AVAudioRecorder!
     var audioPlayer : AVAudioPlayer!
@@ -143,13 +143,5 @@ class VoiceViewModel : NSObject , ObservableObject , AVAudioPlayerDelegate {
             return Date()
         }
     }
-}
-
-struct Recording : Equatable {
-    
-    let fileURL : URL
-    let createdAt : Date
-    var isPlaying : Bool
-    
 }
 
