@@ -68,9 +68,9 @@ struct ContentView: View {
     }
 }
 
-//#Preview {
-//    ContentView(note: SampleData.)
-//        .modelContainer(SampleData.shared.modelContainer)
-//}
+#Preview {
+    ContentView()
+        .modelContainer(SampleData.shared.modelContainer)
+}
 
 
