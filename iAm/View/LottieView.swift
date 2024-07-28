@@ -2,26 +2,33 @@
 //  LottieView.swift
 //  iAm
 //
-//  Created by Stanley Nicholas on 10/07/24.
+//  Created by Daniel Ian on 28/07/24.
 //
 
 import SwiftUI
 import Lottie
 
 struct LottieView: UIViewRepresentable {
-    
-    var animationFileName: String
-    let loopMode: LottieLoopMode
-    
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        
-    }
-    
-    func makeUIView(context: Context) -> Lottie.LottieAnimationView {
-        let animationView = LottieAnimationView(name: animationFileName)
-        animationView.loopMode = loopMode
+    var name: String
+
+    func makeUIView(context: Context) -> some UIView {
+        let view = UIView()
+        let animationView = LottieAnimationView(name: name)
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.loopMode = .loop
         animationView.play()
-        animationView.contentMode = .scaleAspectFill
-        return animationView
+        
+        view.addSubview(animationView)
+        
+        NSLayoutConstraint.activate([
+            animationView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            animationView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            animationView.topAnchor.constraint(equalTo: view.topAnchor),
+            animationView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        return view
     }
+    
+    func updateUIView(_ uiView: UIViewType, context: Context) {}
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Lottie
 
 struct StateOfMindView: View {
     @Environment(\.dismiss) private var dismiss
@@ -27,27 +28,24 @@ struct StateOfMindView: View {
                 .padding(.top, -10)
 
             ZStack{
-                
                 TabView(selection: $moodValue) {
                     ForEach(Mood.allCases, id: \.self) { mood in
                         VStack {
-                            Image(mood.image)
-                                .resizable()
-                                .scaledToFit()
+                            LottieView(name: mood.image)
                                 .frame(height: 240)
                                 .padding(.bottom, 40)
                             
                             Text(mood.title)
-                            .font(.system(size: 30, weight: .bold))}
+                                .font(.system(size: 30, weight: .bold))
+                        }
                     }
-                } .frame(height: 450)
-                    .tabViewStyle(.page(indexDisplayMode: .never))
+                }
+                .frame(height: 450)
+                .tabViewStyle(.page(indexDisplayMode: .never))
                 
-                HStack{
-                    
-                    if !(moodValue == .unpleasant) {
-                        
-                        //button chevron left
+                HStack {
+                    if moodValue != .unpleasant {
+                        // button chevron left
                         Button(action: {
                             if let currentIndex = Mood.allCases.firstIndex(of: moodValue) {
                                 let newIndex = (currentIndex - 1 + Mood.allCases.count) % Mood.allCases.count
@@ -61,7 +59,7 @@ struct StateOfMindView: View {
                     }
                     Spacer()
                     
-                    if !(moodValue == .pleasant) {
+                    if moodValue != .pleasant {
                         // button chevron right
                         Button(action: {
                             if let currentIndex = Mood.allCases.firstIndex(of: moodValue) {
@@ -77,32 +75,28 @@ struct StateOfMindView: View {
                 }
             }
             Button {
-                if (isEditing) {
+                if isEditing {
                     dismiss()
-                } else  {
+                } else {
                     let newNote = Note(mood: moodValue, content: "", timestamp: Date())
                     context.insert(newNote)
                     Router.shared.path.append(.noteView(note: newNote))
                     dismiss()
-
                 }
             } label: {
                 Text(isEditing ? "Update" : "Log Emotion")
                     .frame(width: 115, height: 18)
                     .padding()
-                    .background(.blue)
+                    .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(12)
             }
             .padding(.top, 50)
-            
         }
         .frame(height: UIScreen.main.bounds.height)
-        
     }
 }
 
 #Preview {
     StateOfMindView(moodValue: .constant(.neutral), isEditing: false)
 }
-
