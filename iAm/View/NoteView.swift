@@ -57,10 +57,10 @@ struct NoteView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
-                Button(action: {}, label: {
-                    Image(systemName: "checklist")
-                })
-                Spacer()
+//                Button(action: {}, label: {
+//                    Image(systemName: "checklist")
+//                })
+//                Spacer()
                 PhotosPicker(selection: $selectedPhoto, matching: .images, photoLibrary: .shared()) {
                     Image(systemName: "camera")
                 }
