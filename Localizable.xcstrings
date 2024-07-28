@@ -52,6 +52,16 @@
         }
       }
     },
+    "Done" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
+          }
+        }
+      }
+    },
     "Edit Note" : {
       "localizations" : {
         "id" : {

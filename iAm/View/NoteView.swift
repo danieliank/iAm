@@ -1,10 +1,3 @@
-//
-//  NoteView.swift
-//  iAm
-//
-//  Created by Alfadli Maulana Siddik on 11/07/24.
-//
-
 import Foundation
 import SwiftUI
 import SwiftData
@@ -17,17 +10,13 @@ struct NoteView: View {
     @State private var toggledView: String?
     @State private var isRecorderToggled: Bool = false
     @State private var micIcon: String = "mic"
-    
     @StateObject var vm = VoiceViewModel()
-    
     @State var showSheet: Bool = false
-    
-//    let date = DateFormatter().dateFormat
-    
+    @FocusState private var isTextEditorFocused: Bool // Add this state for managing focus
+
     var body: some View {
         VStack {
-            
-            //Selected StateOfMind
+            // Selected StateOfMind
             StateOfMindHeader(selectedStateOfMind: note.mood, showSheet: $showSheet)
             
             if let photoData = note.noteImage, let uiImage = UIImage(data: photoData) {
@@ -37,21 +26,29 @@ struct NoteView: View {
                     .frame(maxWidth: .infinity, maxHeight: 300)
             }
             
-            VStack {
-                
-            }
             TextEditor(text: $note.content)
-            .scrollContentBackground(.hidden)
-            .padding(.horizontal)
-            .background(Color(uiColor: .secondarySystemBackground))
+                .scrollContentBackground(.hidden)
+                .padding(.horizontal)
+                .background(Color(uiColor: .secondarySystemBackground))
+                .focused($isTextEditorFocused) // Bind the focus state
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("Done") {
+                            isTextEditorFocused = false // Dismiss the keyboard
+                        }
+                    }
+                }
+            
             RecordingListView(vm: vm, note: note)
         }
         .onAppear {
             vm.fetchAllRecording(audioURLs: note.audioFileName)
         }
         .navigationTitle(note.timestamp.formatted(Date.FormatStyle().weekday(.wide)
-                    .day(.twoDigits).month()
-                    ) + " · " + note.timestamp.formatted(Date.FormatStyle().hour().minute(.twoDigits)))        .navigationBarTitleDisplayMode(.inline)
+            .day(.twoDigits).month()
+            ) + " · " + note.timestamp.formatted(Date.FormatStyle().hour().minute(.twoDigits)))
+        .navigationBarTitleDisplayMode(.inline)
         .background(Color(uiColor: .secondarySystemBackground))
         .navigationTitle(note.timestamp.formatted(Date.FormatStyle()
             .weekday(.abbreviated)
@@ -59,13 +56,6 @@ struct NoteView: View {
         ) + " · " + note.timestamp.formatted(Date.FormatStyle().hour().minute(.twoDigits)))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-//            ToolbarItem (placement: .topBarTrailing) {
-//                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-//                    Image(systemName: "ellipsis.circle").fontWeight(.medium)
-//                })
-//                .foregroundStyle(.blue)
-//            }
-            
             ToolbarItemGroup(placement: .bottomBar) {
                 Button(action: {}, label: {
                     Image(systemName: "checklist")
@@ -92,17 +82,16 @@ struct NoteView: View {
                     Image(systemName: micIcon)
                         .foregroundStyle(.blue)
                 })
-
             }
         }
-        .sheet(isPresented: $showSheet){
+        .sheet(isPresented: $showSheet) {
             StateOfMindView(moodValue: $note.mood, isEditing: true)
                 .presentationDragIndicator(.visible)
                 .presentationCornerRadius(10)
         }
         Spacer()
-        if isRecorderToggled == true {
-            AudioRecordToolbarView(vm:vm, note: note)
+        if isRecorderToggled {
+            AudioRecordToolbarView(vm: vm, note: note)
         } else {
             EmptyView()
         }
@@ -115,3 +104,4 @@ struct NoteView: View {
     }
     .modelContainer(SampleData.shared.modelContainer)
 }
+
