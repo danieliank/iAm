@@ -37,6 +37,7 @@ struct StateOfMindView: View {
                             
                             Text(mood.title)
                                 .font(.system(size: 30, weight: .bold))
+                                .fontWidth(.expanded)
                         }
                     }
                 }
